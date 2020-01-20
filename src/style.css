@@ -1,0 +1,23 @@
+button{
+    display: inline-block;
+    padding: 20px 15px;
+    text-decoration: none;
+    color:white;
+    background:#ffba01;
+}
+
+.logo{
+    width: 20%;
+    height: 20%;
+    margin:auto;
+    display:block;
+}
+
+body{
+    background-image: url(img/fondo1.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover;  
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    
+}
