@@ -1,3 +1,4 @@
+
 # DovePlayer 
  ![Logo](README/logo-backblack.jpg)
 
@@ -6,11 +7,14 @@ DovePlayer es una Red Social sobre Juegos de mesa, donde podras compartir tus op
 
 
 
+
   
 DEFINICION DEL PRODUCTO 
 Esta aplicación esta enfocada en afisionados de los juegos de mesa.
 Los participantes deberán registrarse para crear su propio perfil, de esta manera podran realizar sus publicaciones sobre sus experiencias con algun juego en particular.
+
 Nuestro objetivo es que los participantes de DovePlayer puedan interactuar entre ellos y además aplicando la jugabilidad, ya que ademas cada usuario podrá ser calificado por su publicacion .
+
 
 
 
