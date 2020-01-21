@@ -6,7 +6,7 @@
 
 const btnRegister= document.getElementById('registerMe').addEventListener('click', registerMe)
 const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
-const btnSignOff = document.getElementById('btnSignOff').addEventListener('click', signOff)
+// const btnSignOff = document.getElementById('btnSignOff').addEventListener('click', signOff)
 
 function registerMe() {
   const root = document.getElementById('root')
@@ -57,7 +57,6 @@ function signOff() {
     console.log(error)
   });
 }
-
  function observer() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
