@@ -6,6 +6,7 @@
 
 const btnRegister= document.getElementById('registerMe').addEventListener('click', registerMe)
 const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
+const btnSignOff = document.getElementById('btnSignOff').addEventListener('click', signOff)
 
 function registerMe() {
   const root = document.getElementById('root')
@@ -32,6 +33,9 @@ function register() {
 function logIn() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+
+    root.innerHTML = `<button onclick="signOff()">Cerrar Sesión</button>`
+   
     
     firebase.auth().signInWithEmailAndPassword(email, password)
     .catch(function(error) {
@@ -43,6 +47,17 @@ function logIn() {
         console.log(errorMessage);
       });
 }
+function signOff() {
+  
+  firebase.auth().signOut()
+  .then(function(){
+    console.log('saliendo....')
+  })
+  .catch(function(error){
+    console.log(error)
+  });
+}
+
  function observer() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
