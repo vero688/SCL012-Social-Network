@@ -4,35 +4,76 @@
 
 // myFunction();
 
-const btnRegistro= document.getElementById('enviar').addEventListener('click', registrar)
-const btnEntrar = document.getElementById('entrar').addEventListener('click', entrar)
+const btnRegister= document.getElementById('registerMe').addEventListener('click', registerMe)
+const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
+ 
 
-function registrar() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+function registerMe() {
+  const root = document.getElementById('root')
+    root.innerHTML=  `<h4>Registro de Usuarios</h4>
+  <input id="registerEmail" type="email" placeholder="ingresa tu Email">
+  <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">`
+}
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+function register() {
+    const registerEmail = document.getElementById('registerEmail').value;
+    const registerPassword = document.getElementById('registerPassword').value;
+    
+    firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
     .catch(function(error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        let errorCode = error.code;
+        let errorMessage = error.message;
         // ...
         console.log(errorCode);
         console.log(errorMessage);
       });
 };
 
-function entrar() {
-    const email2 = document.getElementById('email2').value;
-    const password2 = document.getElementById('password2').value;
-    
-    firebase.auth().signInWithEmailAndPassword(email2, password2)
+function logIn() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    root.innerHTML = `<button id="btnSignOff">Cerrar Sesión</button>`
+   
+   document.getElementById('btnSignOff').addEventListener('click', signOff)
+    firebase.auth().signInWithEmailAndPassword(email, password)
     .catch(function(error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        let errorCode = error.code;
+        let errorMessage = error.message;
         // ...
         console.log(errorCode);
         console.log(errorMessage);
       });
+
 }
+function signOff() {
+  
+  firebase.auth().signOut()
+  .then(function(){
+    console.log('saliendo....')
+  })
+  .catch(function(error){
+    console.log(error)
+  });
+}
+ function observer() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      let displayName = user.displayName;
+      let email = user.email;
+      let emailVerified = user.emailVerified;
+      let photoURL = user.photoURL;
+      let isAnonymous = user.isAnonymous;
+      let uid = user.uid;
+      let providerData = user.providerData;
+      // ...
+    } else {
+      // User is signed out.
+      // ...
+    }
+  });
+ }
+ observer();
