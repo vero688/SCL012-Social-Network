@@ -34,7 +34,18 @@ function logIn() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    root.innerHTML = `<button id="btnSignOff">Cerrar Sesión</button>`
+    root.innerHTML = `
+    <h1>DP</h1>
+    <br>
+    <button id="homeMuro">HOME</button>
+    <button id="perfilUsuario">fotoUsuario</button>
+    <br>
+    <!-- Buscador -->
+    <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
+
+    
+    <button id="btnSignOff">Cerrar Sesión</button>
+    `   /* VARINEA "creando" DESKTOP MURO */
    
    document.getElementById('btnSignOff').addEventListener('click', signOff)
     firebase.auth().signInWithEmailAndPassword(email, password)
