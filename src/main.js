@@ -8,6 +8,7 @@ const btnRegister= document.getElementById('registerMe').addEventListener('click
 const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
  
 
+// REGISTRAR USUARIO
 function registerMe() {
   const root = document.getElementById('root')
     root.innerHTML=  `<h4>Registro de Usuarios</h4>
@@ -30,6 +31,7 @@ function register() {
       });    
 };
 
+// LOGEARSE Y CERRAR SESIÓN
 function logIn() { /* VARINEA meti mano*/
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
@@ -60,6 +62,8 @@ function logIn() { /* VARINEA meti mano*/
       });
 
 }
+
+// funcion CERRAR SESIÓN
 function signOff() {
   
   firebase.auth().signOut()
