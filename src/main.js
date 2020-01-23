@@ -27,14 +27,15 @@ function register() {
         // ...
         console.log(errorCode);
         console.log(errorMessage);
-      });
+      });    
 };
 
-function logIn() {
+function logIn() { /* VARINEA meti mano*/
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     root.innerHTML = `
+
     <h1>DP</h1>
     <br>
     <button id="homeMuro">HOME</button>
@@ -43,9 +44,9 @@ function logIn() {
     <!-- Buscador -->
     <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
 
-    
+    <!-- Cerrar sesión -->
     <button id="btnSignOff">Cerrar Sesión</button>
-    `   /* VARINEA "creando" DESKTOP MURO */
+    `  
    
    document.getElementById('btnSignOff').addEventListener('click', signOff)
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -55,7 +56,7 @@ function logIn() {
         let errorMessage = error.message;
         // ...
         console.log(errorCode);
-        console.log(errorMessage);
+        console.log(errorMessage);s
       });
 
 }
@@ -63,12 +64,15 @@ function signOff() {
   
   firebase.auth().signOut()
   .then(function(){
-    console.log('saliendo....')
+    document.location.href="/";
+    //console.log('saliendo....')
   })
   .catch(function(error){
-    console.log(error)
+    console.log('error')
   });
 }
+
+
  function observer() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
