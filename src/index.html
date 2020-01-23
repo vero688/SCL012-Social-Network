@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-    <img class="logo" src="img/logo.png">
-=======
->>>>>>> f38919658d3fee544ad2a7bf6e2ea95497919458
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,8 +16,10 @@
   <button id="logIn">Iniciar Sesión</button>
   <img clas="witch"src="img/brujo.png">
   <button id="registerMe">Registrarme</button>
+  <button id="recoverBtn">Recuperar contraseña</button>
+  <!-- <button id="recoverBtn">¿Olvidaste tu contraseña?</button> -->
  </div>
-
+ <div id ='contentRecover'></div>
 <!-- JQUERY -->
  <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -30,12 +28,13 @@
 
   <script type="module" src="main.js"></script>
  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-tools.js"></script> -->
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
 
      <script>
        // Your web app's Firebase configuration

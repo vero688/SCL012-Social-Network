@@ -1,58 +1,86 @@
-[debug] [2020-01-20T15:21:40.908Z] ----------------------------------------------------------------------
-[debug] [2020-01-20T15:21:40.912Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2020-01-20T15:21:40.912Z] CLI Version:   7.12.1
-[debug] [2020-01-20T15:21:40.912Z] Platform:      darwin
-[debug] [2020-01-20T15:21:40.912Z] Node Version:  v10.16.3
-[debug] [2020-01-20T15:21:40.914Z] Time:          Mon Jan 20 2020 12:21:40 GMT-0300 (GMT-03:00)
-[debug] [2020-01-20T15:21:40.914Z] ----------------------------------------------------------------------
-[debug] [2020-01-20T15:21:40.914Z] 
-[debug] [2020-01-20T15:21:40.937Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-20T15:21:40.938Z] > authorizing via signed-in user
-[debug] [2020-01-20T15:21:40.938Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
-[debug] [2020-01-20T15:21:40.940Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2020-01-20T15:21:40.941Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2020-01-22T14:37:17.844Z] ----------------------------------------------------------------------
+[debug] [2020-01-22T14:37:17.847Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-22T14:37:17.847Z] CLI Version:   7.12.1
+[debug] [2020-01-22T14:37:17.847Z] Platform:      darwin
+[debug] [2020-01-22T14:37:17.847Z] Node Version:  v13.6.0
+[debug] [2020-01-22T14:37:17.862Z] Time:          Wed Jan 22 2020 11:37:17 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-22T14:37:17.862Z] ----------------------------------------------------------------------
+[debug] [2020-01-22T14:37:17.862Z] 
+[debug] [2020-01-22T14:37:17.876Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-22T14:37:17.877Z] > authorizing via signed-in user
+[debug] [2020-01-22T14:37:17.877Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-22T14:37:17.879Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-22T14:37:17.879Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2020-01-20T15:21:41.316Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-20T15:21:41.328Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+[debug] [2020-01-22T14:37:18.044Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-22T14:37:18.053Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
 
-[debug] [2020-01-20T15:21:42.424Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-20T15:21:42.426Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+[debug] [2020-01-22T14:37:19.094Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-22T14:37:19.096Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
  
-[debug] [2020-01-20T15:21:42.911Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-22T14:37:19.513Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
 [info] 
-[debug] [2020-01-20T15:21:42.916Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+[debug] [2020-01-22T14:37:19.519Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
  
-[debug] [2020-01-20T15:21:44.196Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "13"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-01-22T14:37:20.127Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions" for Cloud Functions...
+[debug] [2020-01-22T14:37:20.199Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-22T14:37:20.200Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-22T14:37:20.200Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-22T14:37:20.201Z] [worker-~diagnostic~-f330dd3f-4832-4d46-a417-e28a65393ff0]: Assigning socketPath: /var/folders/sz/rfy9mjvj3cl04xxv2qklhnv00000gn/T/fire_emu_3668.sock
+[debug] [2020-01-22T14:37:20.201Z] [worker-~diagnostic~-f330dd3f-4832-4d46-a417-e28a65393ff0]: BUSY
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
-[debug] [2020-01-21T00:18:56.141Z] ----------------------------------------------------------------------
-[debug] [2020-01-21T00:18:56.147Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2020-01-21T00:18:56.147Z] CLI Version:   7.12.1
-[debug] [2020-01-21T00:18:56.147Z] Platform:      darwin
-[debug] [2020-01-21T00:18:56.147Z] Node Version:  v10.16.3
-[debug] [2020-01-21T00:18:56.151Z] Time:          Mon Jan 20 2020 21:18:56 GMT-0300 (GMT-03:00)
-[debug] [2020-01-21T00:18:56.151Z] ----------------------------------------------------------------------
-[debug] [2020-01-21T00:18:56.152Z] 
-[debug] [2020-01-21T00:18:56.185Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-21T00:18:56.186Z] > authorizing via signed-in user
-[debug] [2020-01-21T00:18:56.186Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
-[debug] [2020-01-21T00:18:56.190Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2020-01-21T00:18:56.191Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+[debug] [2020-01-22T14:37:20.760Z] [runtime-status] [3668] Functions runtime initialized. {"cwd":"/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions","node_version":"13.6.0"}
+[debug] [2020-01-22T14:37:20.762Z] [runtime-status] [3668] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-01-22T14:37:20.831Z] [worker-~diagnostic~-f330dd3f-4832-4d46-a417-e28a65393ff0]: exited
+[debug] [2020-01-22T14:37:20.832Z] [worker-~diagnostic~-f330dd3f-4832-4d46-a417-e28a65393ff0]: FINISHED
+[debug] [2020-01-23T12:14:29.560Z] ----------------------------------------------------------------------
+[debug] [2020-01-23T12:14:29.564Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-23T12:14:29.564Z] CLI Version:   7.12.1
+[debug] [2020-01-23T12:14:29.565Z] Platform:      darwin
+[debug] [2020-01-23T12:14:29.565Z] Node Version:  v13.6.0
+[debug] [2020-01-23T12:14:29.567Z] Time:          Thu Jan 23 2020 09:14:29 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-23T12:14:29.567Z] ----------------------------------------------------------------------
+[debug] [2020-01-23T12:14:29.567Z] 
+[debug] [2020-01-23T12:14:29.592Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-23T12:14:29.593Z] > authorizing via signed-in user
+[debug] [2020-01-23T12:14:29.593Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-23T12:14:29.595Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-23T12:14:29.595Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
-[debug] [2020-01-21T00:18:56.832Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-21T00:18:56.842Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+[debug] [2020-01-23T12:14:29.749Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-23T12:14:29.792Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
 
-[debug] [2020-01-21T00:18:58.071Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-21T00:18:58.073Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+[debug] [2020-01-23T12:14:30.836Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-23T12:14:30.838Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
  
-[debug] [2020-01-21T00:18:59.504Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-23T12:14:32.133Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
 [info] 
-[debug] [2020-01-21T00:18:59.516Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+[debug] [2020-01-23T12:14:32.139Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
  
-[debug] [2020-01-21T00:19:00.029Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "13"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-01-23T12:14:32.629Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions" for Cloud Functions...
+[debug] [2020-01-23T12:14:32.735Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-23T12:14:32.736Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-23T12:14:32.736Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-23T12:14:32.737Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: Assigning socketPath: /var/folders/sz/rfy9mjvj3cl04xxv2qklhnv00000gn/T/fire_emu_1024.sock
+[debug] [2020-01-23T12:14:32.737Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: BUSY
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-23T12:14:33.563Z] [runtime-status] [1024] Functions runtime initialized. {"cwd":"/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions","node_version":"13.6.0"}
+[debug] [2020-01-23T12:14:33.566Z] [runtime-status] [1024] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-01-23T12:14:33.759Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: exited
+[debug] [2020-01-23T12:14:33.759Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: FINISHED
