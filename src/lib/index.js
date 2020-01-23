@@ -1,6 +1,9 @@
-// aqui exportaras las funciones que necesites
+// inicilalizacion a router llamados general
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
+import {initRouter} from "./router"
+
+const mainLog = () => {
+    initRouter();
 };
+ 
+ window.addEventListener('load',mainLog );
