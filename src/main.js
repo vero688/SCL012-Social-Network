@@ -8,6 +8,7 @@ const btnRegister= document.getElementById('registerMe').addEventListener('click
 const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
  
 
+// REGISTRAR USUARIO
 function registerMe() {
   const root = document.getElementById('root')
     root.innerHTML=  `<h4>Registro de Usuarios</h4>
@@ -34,14 +35,27 @@ function register() {
         // ...
         console.log(errorCode);
         console.log(errorMessage);
-      });
+      });    
 };
 
-function logIn() {
+// LOGEARSE Y CERRAR SESIÓN
+function logIn() { /* VARINEA meti mano*/
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    root.innerHTML = `<button id="btnSignOff">Cerrar Sesión</button>`
+    root.innerHTML = `
+
+    <h1>DP</h1>
+    <br>
+    <button id="homeMuro">HOME</button>
+    <button id="perfilUsuario">fotoUsuario</button>
+    <br>
+    <!-- Buscador -->
+    <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
+
+    <!-- Cerrar sesión -->
+    <button id="btnSignOff">Cerrar Sesión</button>
+    `  
    
    document.getElementById('btnSignOff').addEventListener('click', signOff)
     firebase.auth().signInWithEmailAndPassword(email, password)
@@ -52,18 +66,21 @@ function logIn() {
         let errorMessage = error.message;
         // ...
         console.log(errorCode);
-        console.log(errorMessage);
+        console.log(errorMessage);s
       });
 
 }
+
+// funcion CERRAR SESIÓN
 function signOff() {
   
   firebase.auth().signOut()
   .then(function(){
-    console.log('saliendo....')
+    document.location.href="/";
+    //console.log('saliendo....')
   })
   .catch(function(error){
-    console.log(error)
+    console.log('error')
   });
 }
 function check() {
@@ -118,9 +135,6 @@ const contentRecover = document.getElementById('contentRecover');//llamando divc
   const writeEmail = inputRecover.value;//declarando constante para que tome valor del input 
   contentRecover.appendChild(inputRecover);//hacendo hijo al input del div contenedor
  
-  const sendBtn = document.getElementById("sendBtn");
-  sendBtn.addEventListener('click', () => {
-
 
 let recoverPass = function(){// para invocar a la funcion de firebase
   let auth = firebase.auth();
@@ -136,13 +150,3 @@ let recoverPass = function(){// para invocar a la funcion de firebase
 recoverPass(writeEmail);//indicando que al hacer click aplique esta funcion 
 
 })
-
-// CREAR función saber que el usuario esta logeado en cada una de nuestras páginas-VARINEA
-//Initialize FireBase
-
-
-//CRUD
-
-=======
-});
- })
