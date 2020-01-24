@@ -13,14 +13,21 @@ function registerMe() {
   const root = document.getElementById('root')
     root.innerHTML=  `<h4>Registro de Usuarios</h4>
   <input id="registerEmail" type="email" placeholder="ingresa tu Email">
-  <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">`
+  <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
+  <button id="btnRegisterMe">Registrarme</button>
+  `
+  document.getElementById('btnRegisterMe').addEventListener('click', register)
 }
 
 function register() {
     const registerEmail = document.getElementById('registerEmail').value;
     const registerPassword = document.getElementById('registerPassword').value;
     
+    
     firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
+    .then(function(){
+      check()
+    })
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -52,6 +59,7 @@ function logIn() { /* VARINEA meti mano*/
    
    document.getElementById('btnSignOff').addEventListener('click', signOff)
     firebase.auth().signInWithEmailAndPassword(email, password)
+   
     .catch(function(error) {
         // Handle Errors here.
         let errorCode = error.code;
@@ -75,7 +83,18 @@ function signOff() {
     console.log('error')
   });
 }
+function check() {
+  var user = firebase.auth().currentUser;
 
+user.sendEmailVerification().then(function() {
+  // Email sent.
+  console.log('enviando correo...');
+})
+.catch(function(error) {
+  // An error happened.
+  console.log(error);
+});
+}
 
  function observer() {
   firebase.auth().onAuthStateChanged(function(user) {
@@ -83,6 +102,7 @@ function signOff() {
       // User is signed in.
       let displayName = user.displayName;
       let email = user.email;
+      console.log(user.emailVerified)
       let emailVerified = user.emailVerified;
       let photoURL = user.photoURL;
       let isAnonymous = user.isAnonymous;
