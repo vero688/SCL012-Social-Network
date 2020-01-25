@@ -148,13 +148,3 @@ let recoverPass = function(){// para invocar a la funcion de firebase
 recoverPass(writeEmail);//indicando que al hacer click aplique esta funcion 
 
 })
-
-// CREAR función saber que el usuario esta logeado en cada una de nuestras páginas-VARINEA
-//Initialize FireBase
-
-
-//CRUD
-
-=======
-});
- })
