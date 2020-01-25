@@ -44,7 +44,6 @@ function logIn() { /* VARINEA meti mano*/
     const password = document.getElementById('password').value;
 
     root.innerHTML = `
-
     <h1>DP</h1>
     <br>
     <button id="homeMuro">HOME</button>
@@ -52,7 +51,6 @@ function logIn() { /* VARINEA meti mano*/
     <br>
     <!-- Buscador -->
     <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
-
     <!-- Cerrar sesión -->
     <button id="btnSignOff">Cerrar Sesión</button>
     `  
@@ -150,10 +148,3 @@ let recoverPass = function(){// para invocar a la funcion de firebase
 recoverPass(writeEmail);//indicando que al hacer click aplique esta funcion 
 
 })
-
-// CREAR función saber que el usuario esta logeado en cada una de nuestras páginas-VARINEA
-//Initialize FireBase
-
-
-//CRUD
-
