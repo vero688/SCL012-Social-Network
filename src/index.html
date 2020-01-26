@@ -3,21 +3,19 @@
 
 <head>
 
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Social Network</title>
   <link rel="stylesheet" href="style.css" />
-    <!--FIRESTORE-->
-  <!-- <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script> -->
+
 
 </head>
 
 <body>
 
-<img class="logo" src="img/logo.png">
+  <img class="logo" src="img/logo.png">
   <div id="root">
     <h4>Ingreso de Usuarios</h4>
     <input id="email" type="email" placeholder="ingresa tu Email">
@@ -31,17 +29,16 @@
 
   <header id="root2">
     <button id="Gmail">Ingresa Aqui</button>
-  </header>
 
-  <!--<div id='contentRecover'>-->
-    <!-- CRUD, Crear, leer, editar y borrar -->
+
+  </header>
 
   <!--</div>-->
 
   <script type="module" src="main.js"></script>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
 
@@ -61,10 +58,11 @@
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    firebase.analytics()
+    
   </script>
 
   <script type="module" src="./lib/post.js"></script>
+
 </body>
 
 </html>
