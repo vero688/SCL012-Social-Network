@@ -6,7 +6,7 @@
 
 const btnRegister= document.getElementById('registerMe').addEventListener('click', registerMe)
 const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
- 
+
 
 // REGISTRAR USUARIO
 function registerMe() {
@@ -49,9 +49,16 @@ function register() {
 
 // LOGEARSE Y CERRAR SESIÓN
 function logIn() { /* VARINEA meti mano*/
+ 
+    
    window.location.hash = '/logIn';
+
+   if(email.value === '' && password.value === ''){
+    alert('Debe Ingresar su correo electrónico y Contraseña');
+  }
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    
 
     root.innerHTML = `
 
