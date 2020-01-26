@@ -11,11 +11,11 @@ const btnLogIn = document.getElementById('logIn').addEventListener('click', logI
 // REGISTRAR USUARIO
 function registerMe() {
   const root = document.getElementById('root')
-    root.innerHTML=  `<h4>Registro de Usuarios</h4>
+  root.innerHTML=  `<h4>Registro de Usuarios</h4>
   <input id="registerEmail" type="email" placeholder="ingresa tu Email">
   <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
-  <button id="btnRegisterMe">Registrarme</button>
-  `
+  <button id="btnRegisterMe">Registrarme</button> `
+ 
   document.getElementById('btnRegisterMe').addEventListener('click', register)
 }
 
@@ -51,9 +51,20 @@ function logIn() { /* VARINEA meti mano*/
     <br>
     <!-- Buscador -->
     <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
+
+    <!-- post -->
+   
+    <input type="text" class="post" size="15" maxlength="30" value="Titulo" name="nombre">
+
+    <textarea name="comentarios" class="post" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+
+    <button class="postbutton" id="postbutton">Pulicar</button>
+  
+
+
     <!-- Cerrar sesión -->
     <button id="btnSignOff">Cerrar Sesión</button>
-    `  
+    `
    
    document.getElementById('btnSignOff').addEventListener('click', signOff)
     firebase.auth().signInWithEmailAndPassword(email, password)
