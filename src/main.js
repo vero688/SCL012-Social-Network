@@ -10,9 +10,18 @@ const btnLogIn = document.getElementById('logIn').addEventListener('click', logI
 
 // REGISTRAR USUARIO
 function registerMe() {
-  const root = document.getElementById('root')
-    root.innerHTML=  `<h4>Registro de Usuarios</h4>
+  window.location.hash = '/RegisterMe';
+  const root = document.getElementById('root');
+   root.innerHTML = `<h4>Crear Cuenta</h4>
+  <input id="name" placeholder="Nombre y Apellido">
+  <input id="date" type="date" placeholder="Fecha de Nacimiento">
+  <form>
+  <input type="radio" name="gender" value="male" > Masculino
+  <input type="radio" name="gender" value="female"> Femenino
+  <input type="radio" name="gender" value="other"> Otro
+</form>
   <input id="registerEmail" type="email" placeholder="ingresa tu Email">
+  <p>Tu contraseña debe tener un mínimo de 6 caracteres númericos</p>
   <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
   <button id="btnRegisterMe">Registrarme</button>
   `
@@ -40,6 +49,7 @@ function register() {
 
 // LOGEARSE Y CERRAR SESIÓN
 function logIn() { /* VARINEA meti mano*/
+   window.location.hash = '/logIn';
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
@@ -84,7 +94,7 @@ function signOff() {
   });
 }
 function check() {
-  var user = firebase.auth().currentUser;
+  let user = firebase.auth().currentUser;
 
 user.sendEmailVerification().then(function() {
   // Email sent.
