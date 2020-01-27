@@ -125,3 +125,46 @@
 [debug] [2020-01-23T12:14:33.759Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: exited
 [debug] [2020-01-23T12:14:33.759Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: FINISHED
 
+[debug] [2020-01-27T14:05:17.888Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T14:05:17.892Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-27T14:05:17.892Z] CLI Version:   7.12.1
+[debug] [2020-01-27T14:05:17.893Z] Platform:      darwin
+[debug] [2020-01-27T14:05:17.893Z] Node Version:  v13.6.0
+[debug] [2020-01-27T14:05:17.908Z] Time:          Mon Jan 27 2020 11:05:17 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-27T14:05:17.908Z] ----------------------------------------------------------------------
+[debug] [2020-01-27T14:05:17.908Z] 
+[debug] [2020-01-27T14:05:17.923Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-27T14:05:17.923Z] > authorizing via signed-in user
+[debug] [2020-01-27T14:05:17.923Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-27T14:05:17.925Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-27T14:05:17.926Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-27T14:05:18.098Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T14:05:18.107Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+
+[debug] [2020-01-27T14:05:19.202Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-27T14:05:19.204Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+ 
+[debug] [2020-01-27T14:05:19.713Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-27T14:05:19.720Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "13"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-01-27T14:05:21.046Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions" for Cloud Functions...
+[debug] [2020-01-27T14:05:21.121Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-27T14:05:21.121Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-27T14:05:21.121Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-27T14:05:21.122Z] [worker-~diagnostic~-100911ee-0a66-4a19-9900-504e3ca7ff1a]: Assigning socketPath: /var/folders/sz/rfy9mjvj3cl04xxv2qklhnv00000gn/T/fire_emu_7902.sock
+[debug] [2020-01-27T14:05:21.122Z] [worker-~diagnostic~-100911ee-0a66-4a19-9900-504e3ca7ff1a]: BUSY
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-27T14:05:21.763Z] [runtime-status] [7902] Functions runtime initialized. {"cwd":"/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions","node_version":"13.6.0"}
+[debug] [2020-01-27T14:05:21.771Z] [runtime-status] [7902] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-01-27T14:05:21.841Z] [worker-~diagnostic~-100911ee-0a66-4a19-9900-504e3ca7ff1a]: exited
+[debug] [2020-01-27T14:05:21.842Z] [worker-~diagnostic~-100911ee-0a66-4a19-9900-504e3ca7ff1a]: FINISHED
