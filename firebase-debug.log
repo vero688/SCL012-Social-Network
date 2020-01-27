@@ -10,7 +10,6 @@
 [debug] [2020-01-24T13:18:05.348Z] > authorizing via signed-in user
 [debug] [2020-01-24T13:18:05.349Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
 [debug] [2020-01-24T13:18:05.351Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
-<<<<<<< HEAD
 
 [debug] [2020-01-24T13:18:06.434Z] <<< HTTP RESPONSE 200
 [debug] [2020-01-24T13:18:06.438Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
@@ -197,4 +196,4 @@
 [debug] [2020-01-23T12:14:33.759Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: exited
 [debug] [2020-01-23T12:14:33.759Z] [worker-~diagnostic~-63a7e8b7-04d3-44af-a883-da991ecf30e0]: FINISHED
 
->>>>>>> 99eb41e8b82584a58de3fa854a8a794867152803
+
