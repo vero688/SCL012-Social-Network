@@ -3,14 +3,12 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-
-const btnRegister= document.getElementById('registerMe').addEventListener('click', registerMe)
-document.getElementById('logIn').addEventListener('click', logIn) 
+ document.getElementById('registerMe').addEventListener('click', registerMe)
+document.getElementById('logIn').addEventListener('click', logIn)
 
 
 // REGISTRAR USUARIO
 function registerMe() {
- 
   const root = document.getElementById('root');
    root.innerHTML = `<h4>Crear Cuenta</h4>
   <input id="name" placeholder="Nombre y Apellido">
@@ -114,6 +112,7 @@ user.sendEmailVerification().then(function() {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      logIn();
       let displayName = user.displayName;
       let email = user.email;
       console.log(user.emailVerified)
@@ -132,3 +131,4 @@ user.sendEmailVerification().then(function() {
 
  }
  observer();
+
