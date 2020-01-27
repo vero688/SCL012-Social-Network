@@ -9,7 +9,7 @@ const btnLogIn = document.getElementById('logIn').addEventListener('click', logI
 
 
 // REGISTRAR USUARIO
-function registerMe() {
+const registerMe = ()=> {
   window.location.hash = '/RegisterMe';
   const root = document.getElementById('root');
    root.innerHTML = `<h4>Crear Cuenta</h4>
