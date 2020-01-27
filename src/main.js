@@ -133,3 +133,4 @@ user.sendEmailVerification().then(function() {
 
  }
  observer();
+
