@@ -5,12 +5,12 @@
 // myFunction();
 
 const btnRegister= document.getElementById('registerMe').addEventListener('click', registerMe)
-const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
+document.getElementById('logIn').addEventListener('click', logIn) 
 
 
 // REGISTRAR USUARIO
-const registerMe = ()=> {
-  window.location.hash = '/RegisterMe';
+function registerMe() {
+ 
   const root = document.getElementById('root');
    root.innerHTML = `<h4>Crear Cuenta</h4>
   <input id="name" placeholder="Nombre y Apellido">
@@ -20,7 +20,7 @@ const registerMe = ()=> {
   <input type="radio" name="gender" value="female"> Femenino
   <input type="radio" name="gender" value="other"> Otro
 </form>
-  <input id="registerEmail" type="email" placeholder="ingresa tu Email">
+  <input id="registerEmail" type="email" placeholder="Ingresa tu Email">
   <p>Tu contraseña debe tener un mínimo de 6 caracteres númericos</p>
   <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
   <button id="btnRegisterMe">Registrarme</button>
@@ -41,6 +41,7 @@ function register() {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
+        alert('Debe completar todos los campos')
         // ...
         console.log(errorCode);
         console.log(errorMessage);
@@ -49,17 +50,12 @@ function register() {
 
 // LOGEARSE Y CERRAR SESIÓN
 function logIn() { /* VARINEA meti mano*/
- 
-    
-   window.location.hash = '/logIn';
 
-   if(email.value === '' && password.value === ''){
-    alert('Debe Ingresar su correo electrónico y Contraseña');
-  }
+
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    
-
+   
+     
     root.innerHTML = `
     <h1>DP</h1>
     <br>
@@ -71,7 +67,7 @@ function logIn() { /* VARINEA meti mano*/
     <!-- Cerrar sesión -->
     <button id="btnSignOff">Cerrar Sesión</button>
     `  
-   
+    
    document.getElementById('btnSignOff').addEventListener('click', signOff)
     firebase.auth().signInWithEmailAndPassword(email, password)
    
@@ -79,10 +75,12 @@ function logIn() { /* VARINEA meti mano*/
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
+        alert('Debe Ingresar su correo electrónico y Contraseña')
         // ...
         console.log(errorCode);
         console.log(errorMessage);s
       });
+    
 
 }
 
@@ -98,6 +96,7 @@ function signOff() {
     console.log('error')
   });
 }
+ 
 function check() {
   let user = firebase.auth().currentUser;
 
@@ -133,35 +132,3 @@ user.sendEmailVerification().then(function() {
 
  }
  observer();
-
- // recuperacion de clave
- const recoverBtn = document.getElementById("recoverBtn");
- recoverBtn.addEventListener('click', () => {  //llamando al boton
-
-// function recoverPassword(){
-const contentRecover = document.getElementById('contentRecover');//llamando divcontenedor en html
-    console.log('recuperar contraseña')
-    const inputRecover = document.createElement("input");//creando input
-    inputRecover.setAttribute('id','inputRecover'); 
-    contentRecover.appendChild(inputRecover);
- 
-  inputRecover.type = 'text'; //indicando que tipo de input es
-  inputRecover.id="inputRecover";//crear id de input
-  const writeEmail = inputRecover.value;//declarando constante para que tome valor del input 
-  contentRecover.appendChild(inputRecover);//hacendo hijo al input del div contenedor
- 
-
-let recoverPass = function(){// para invocar a la funcion de firebase
-  let auth = firebase.auth();
-  let emailAddress = document.getElementById('inputRecover').value; //para recuperar valor email
-  auth.sendPasswordResetEmail(emailAddress)//metodo para recuperacion de correo
-  .then(function(){ //notificar cuando se envio el correo
-    alert('Se ha enviado un correo a tu cuenta. Porfavor sigue las intrucciones')
-
-  },function(error){ // funcion anonima para manejar errores
-    console.log(error)
-  })
-}
-recoverPass(writeEmail);//indicando que al hacer click aplique esta funcion 
-
-})
