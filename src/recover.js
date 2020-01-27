@@ -1,6 +1,7 @@
 // INICIO RECUPERACION CONTRASEÑA--DIANA
 
 
+
 const recoverBtn = document.getElementById("recoverBtn");
   recoverBtn.addEventListener('click', () => {  
   recoverPass();

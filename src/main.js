@@ -5,12 +5,12 @@
 // myFunction();
 
 const btnRegister= document.getElementById('registerMe').addEventListener('click', registerMe)
-const btnLogIn = document.getElementById('logIn').addEventListener('click', logIn)
- 
+document.getElementById('logIn').addEventListener('click', logIn) 
+
 
 // REGISTRAR USUARIO
 function registerMe() {
-  window.location.hash = '/RegisterMe';
+ 
   const root = document.getElementById('root');
    root.innerHTML = `<h4>Crear Cuenta</h4>
   <input id="name" placeholder="Nombre y Apellido">
@@ -20,7 +20,7 @@ function registerMe() {
   <input type="radio" name="gender" value="female"> Femenino
   <input type="radio" name="gender" value="other"> Otro
 </form>
-  <input id="registerEmail" type="email" placeholder="ingresa tu Email">
+  <input id="registerEmail" type="email" placeholder="Ingresa tu Email">
   <p>Tu contraseña debe tener un mínimo de 6 caracteres númericos</p>
   <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
   <button id="btnRegisterMe">Registrarme</button>
@@ -41,6 +41,7 @@ function register() {
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
+        alert('Debe completar todos los campos')
         // ...
         console.log(errorCode);
         console.log(errorMessage);
@@ -49,10 +50,12 @@ function register() {
 
 // LOGEARSE Y CERRAR SESIÓN
 function logIn() { /* VARINEA meti mano*/
-   window.location.hash = '/logIn';
+
+
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-
+   
+     
     root.innerHTML = `
 
     <h1>DP</h1>
@@ -66,7 +69,7 @@ function logIn() { /* VARINEA meti mano*/
     <!-- Cerrar sesión -->
     <button id="btnSignOff">Cerrar Sesión</button>
     `  
-   
+    
    document.getElementById('btnSignOff').addEventListener('click', signOff)
     firebase.auth().signInWithEmailAndPassword(email, password)
    
@@ -74,10 +77,12 @@ function logIn() { /* VARINEA meti mano*/
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
+        alert('Debe Ingresar su correo electrónico y Contraseña')
         // ...
         console.log(errorCode);
         console.log(errorMessage);s
       });
+    
 
 }
 
@@ -93,6 +98,7 @@ function signOff() {
     console.log('error')
   });
 }
+ 
 function check() {
   let user = firebase.auth().currentUser;
 
