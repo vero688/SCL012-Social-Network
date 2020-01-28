@@ -4,10 +4,10 @@
 
 // myFunction();
 showLogIn();
- document.getElementById('registerMe').addEventListener('click', registerMe)
+document.getElementById('registerMe').addEventListener('click', registerMe)
 
 //  Función que crea la pagina de inicio
-function showLogIn () {
+function showLogIn() {
   root.innerHTML = ` <h4>Ingreso de Usuarios</h4>
  <form> 
   <input id="email" type="email" placeholder="ingresa tu Email" required>
@@ -24,28 +24,27 @@ document.getElementById('logIn').addEventListener('click', (prevent) => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   prevent.preventDefault();
-  logIn(email,password);
-   
+  logIn(email, password);
+
 })
 // función que realiza el incio de sesión en firebase
-function logIn(email, password) { 
+function logIn(email, password) {
   firebase.auth().signInWithEmailAndPassword(email, password)
-   
-  .catch(function(error) {
+
+    .catch(function (error) {
       // Handle Errors here.
       let errorCode = error.code;
       let errorMessage = error.message;
       alert('Debe Ingresar su correo electrónico y Contraseña')
       // ...
       console.log(errorCode);
-      console.log(errorMessage);s
+      console.log(errorMessage);
     });
-  
 }
 
-function showHome (user) {
-  if(user.emailVerified) {
-        
+function showHome(user) {
+  if (user.emailVerified) {
+
     root.innerHTML = `
 
     <h1>DP</h1>
@@ -58,27 +57,28 @@ function showHome (user) {
 
     <!-- Cerrar sesión -->
     <button id="btnSignOff">Cerrar Sesión</button>
-    `  
-    
-   document.getElementById('btnSignOff').addEventListener('click', signOff)
-   function signOff() {
-  
-    firebase.auth().signOut()
-    .then(function(){
-      document.location.href="/";
-      //console.log('saliendo....')
-    })
-    .catch(function(error){
-      console.log('error')
-    });
-  }
-   
+    `
+
+    document.getElementById('btnSignOff').addEventListener('click', signOff)
+
+    function signOff() {
+
+      firebase.auth().signOut()
+        .then(function () {
+          document.location.href = "/";
+          //console.log('saliendo....')
+        })
+        .catch(function (error) {
+          console.log('error')
+        });
+    }
+
   }
 }
 // REGISTRAR USUARIO
 function registerMe() {
   const root = document.getElementById('root');
-   root.innerHTML = `<h4>Crear Cuenta</h4>
+  root.innerHTML = `<h4>Crear Cuenta</h4>
   <input id="name" placeholder="Nombre y Apellido">
   <input id="date" type="date" placeholder="Fecha de Nacimiento">
   <form>
@@ -95,44 +95,44 @@ function registerMe() {
 }
 
 function register() {
-    const registerEmail = document.getElementById('registerEmail').value;
-    const registerPassword = document.getElementById('registerPassword').value;
-    
-    
-    firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
-    .then(function(){
+  const registerEmail = document.getElementById('registerEmail').value;
+  const registerPassword = document.getElementById('registerPassword').value;
+
+
+  firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
+    .then(function () {
       check()
       alert('La cuenta se ha creado exitosamente');
     })
-    .catch(function(error) {
-        // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        alert('Debe completar todos los campos')
-        // ...
-        console.log(errorCode);
-        console.log(errorMessage);
-      });    
+    .catch(function (error) {
+      // Handle Errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      alert('Debe completar todos los campos')
+      // ...
+      console.log(errorCode);
+      console.log(errorMessage);
+    });
 };
 
 // funcion CERRAR SESIÓN
 
- 
+
 function check() {
   let user = firebase.auth().currentUser;
 
-user.sendEmailVerification().then(function() {
-  // Email sent.
-  console.log('enviando correo...');
-})
-.catch(function(error) {
-  // An error happened.
-  console.log(error);
-});
+  user.sendEmailVerification().then(function () {
+      // Email sent.
+      console.log('enviando correo...');
+    })
+    .catch(function (error) {
+      // An error happened.
+      console.log(error);
+    });
 }
 
- function observer() {
-  firebase.auth().onAuthStateChanged(function(user) {
+function observer() {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
       showHome(user);
@@ -145,10 +145,10 @@ user.sendEmailVerification().then(function() {
       let providerData = user.providerData;
       // ...
     } else {
-    
+
     }
 
   });
 
- }
- observer();
+}
+observer();
