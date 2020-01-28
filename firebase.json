@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "y",
+    "public": "src",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,5 +12,16 @@
         "destination": "/index.html"
       }
     ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+<<<<<<< HEAD
+=======
+
+>>>>>>> 99eb41e8b82584a58de3fa854a8a794867152803
   }
 }
