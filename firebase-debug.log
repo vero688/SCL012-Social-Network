@@ -168,3 +168,46 @@
 [info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
 [debug] [2020-01-27T14:05:21.841Z] [worker-~diagnostic~-100911ee-0a66-4a19-9900-504e3ca7ff1a]: exited
 [debug] [2020-01-27T14:05:21.842Z] [worker-~diagnostic~-100911ee-0a66-4a19-9900-504e3ca7ff1a]: FINISHED
+[debug] [2020-01-28T11:52:44.030Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T11:52:44.034Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-28T11:52:44.035Z] CLI Version:   7.12.1
+[debug] [2020-01-28T11:52:44.035Z] Platform:      darwin
+[debug] [2020-01-28T11:52:44.035Z] Node Version:  v13.6.0
+[debug] [2020-01-28T11:52:44.036Z] Time:          Tue Jan 28 2020 08:52:44 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-28T11:52:44.037Z] ----------------------------------------------------------------------
+[debug] [2020-01-28T11:52:44.037Z] 
+[debug] [2020-01-28T11:52:44.066Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-28T11:52:44.067Z] > authorizing via signed-in user
+[debug] [2020-01-28T11:52:44.067Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-28T11:52:44.070Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-28T11:52:44.070Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-28T11:52:44.216Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-28T11:52:44.225Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+
+[debug] [2020-01-28T11:52:45.519Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-28T11:52:45.521Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+ 
+[debug] [2020-01-28T11:52:46.851Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-28T11:52:46.858Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "13"
+[info] ✔  functions: Emulator started at http://localhost:5001
+[debug] [2020-01-28T11:52:48.284Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions" for Cloud Functions...
+[debug] [2020-01-28T11:52:48.354Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-01-28T11:52:48.354Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-01-28T11:52:48.354Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-01-28T11:52:48.355Z] [worker-~diagnostic~-01ac5454-3576-4e45-92ed-40715744aecc]: Assigning socketPath: /var/folders/sz/rfy9mjvj3cl04xxv2qklhnv00000gn/T/fire_emu_1572.sock
+[debug] [2020-01-28T11:52:48.355Z] [worker-~diagnostic~-01ac5454-3576-4e45-92ed-40715744aecc]: BUSY
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-28T11:52:49.150Z] [runtime-status] [1572] Functions runtime initialized. {"cwd":"/Users/mac/Desktop/Laboratoria/SCL012-Social-Network/functions","node_version":"13.6.0"}
+[debug] [2020-01-28T11:52:49.151Z] [runtime-status] [1572] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[warn] ⚠  The Cloud Functions emulator requires the module "firebase-admin" to be installed. This package is in your package.json, but it's not available. You probably need to run "npm install" in your functions directory.
+[info] i  functions: Your functions could not be parsed due to an issue with your node_modules (see above)
+[debug] [2020-01-28T11:52:49.189Z] [worker-~diagnostic~-01ac5454-3576-4e45-92ed-40715744aecc]: exited
+[debug] [2020-01-28T11:52:49.189Z] [worker-~diagnostic~-01ac5454-3576-4e45-92ed-40715744aecc]: FINISHED
