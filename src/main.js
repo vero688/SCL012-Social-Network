@@ -78,25 +78,26 @@ function showHome(user) {
       querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().Titulo}`);
         postUsuario.innerHTML +=
-
-          ` 
+      ` 
       <h2 id="tittle">${doc.data().Titulo} </h2> 
       <textarea id="text">${doc.data().Texto}</textarea>
-      <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
+      <button id="postDeleted-${doc.id}"> Borrar </button>
       <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
       `
-      });
-    });
+      })
+    })
 
     //___________________ELIMINAR POST___________________
-
-    function postDeleted(id) {
+   
+    document.getElementById("postDeleted-${doc.id}").addEventListener('click', function(id) {
       db.collection("users").doc(id).delete().then(function () {
+        
         console.log("Vaya, vaya, has eliminado el post correctamente!");
       }).catch(function (error) {
         console.error("Ups!, Ocurrio un error: ", error);
       });
-    };
+    })
+     };
 
     //___________________CERRAR SESIÓN___________________
 
@@ -115,7 +116,7 @@ function showHome(user) {
     }
 
   }
-}
+
 
 
 
