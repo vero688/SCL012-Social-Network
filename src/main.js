@@ -68,8 +68,9 @@ function showHome(user) {
 //___________________CREAR POST___________________
 
 document.getElementById('postbutton').addEventListener('click', savePost)
-  function savePost() { 
-  var db = firebase.firestore();
+const db = firebase.firestore();
+function savePost() { 
+  
 let postTittle2 = document.getElementById('postTittle').value;
 let postText2 = document.getElementById('postText').value;	
 
