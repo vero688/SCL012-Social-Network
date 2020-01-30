@@ -48,24 +48,7 @@ function showHome(user) {
     <!-------------- Cerrar Sesión -------------->
     <button id="btnSignOff">Cerrar Sesión</button>
     `
-
-    document.getElementById('btnSignOff').addEventListener('click', signOff)
-    function signOff() {
-
-      firebase.auth().signOut()
-        .then(function () {
-          document.location.href = "/";
-          //console.log('saliendo....')
-        })
-        .catch(function (error) {
-          console.log('error')
-        });
-    }
-
-  }
-}
-
-//___________________CREAR POST___________________
+    //___________________CREAR POST___________________
 
 document.getElementById('postbutton').addEventListener('click', savePost)
 const db = firebase.firestore();
@@ -115,6 +98,24 @@ function postDeleted(id) {
       console.error("Ups!, Ocurrio un error: ", error);
   });
 };
+
+
+    document.getElementById('btnSignOff').addEventListener('click', signOff)
+    function signOff() {
+
+      firebase.auth().signOut()
+        .then(function () {
+          document.location.href = "/";
+          //console.log('saliendo....')
+        })
+        .catch(function (error) {
+          console.log('error')
+        });
+    }
+
+  }
+}
+
 
 
 //___________________REGISTRARSE___________________
