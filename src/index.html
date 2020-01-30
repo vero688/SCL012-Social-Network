@@ -3,47 +3,44 @@
 
 <head>
 
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Social Network</title>
   <link rel="stylesheet" href="style.css" />
-    <!--FIRESTORE-->
+  <!--FIRESTORE-->
   <!-- <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script> -->
+  </script> -->
 
 </head>
 
 <body>
 
-<img class="logo" src="img/logo.png">
-  <div id="root">
-   
-    
-  
-    
-  </div>
+  <img class="logo" src="img/logo.png">
+  <div id="root"> </div>
 
   <header id="root2">
     <button id="Gmail">Ingresa Aqui</button>
   </header>
 
+  <div id='contentRecover' class="contentRecover">
 
- 
-    <div id='contentRecover' class="contentRecover">
-    
   </div>
 
+  <!-------------- Boton Publicar POST
+  <button id="postbutton">Publicar</button>
+  <div Id="postUsuario"></div> -------------->
 
-<!-- CRUD, Crear, leer, editar y borrar -->
-  <script type="module" src="main.js"></script>
-<script type="module" src="recover.js"></script> 
+
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
-  
+  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script>
+
   <!-- <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-tools.js"></script> -->
+
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -52,6 +49,14 @@
   <script>
     
   </script>
+
+  <script type="module"src = "main.js" ></script>
+  <script type="module" src="recover.js"></script>
+  <script type="module" src="./lib/post.js"></script>
+
+
+
+ 
 </body>
 
-</html> 
+</html>
