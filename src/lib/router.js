@@ -18,4 +18,3 @@ const mainLo = (hash) =>{
             break;
     }
 }
-
