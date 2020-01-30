@@ -10,7 +10,7 @@ const recoverBtn = document.getElementById("recoverBtn");
 
   
 
-let recoverPass = function(){// para invocar a la funcion de firebase
+let recoverPass = function(){ // para invocar a la funcion de firebase
     let auth = firebase.auth();
     let emailAddress = document.getElementById('email').value; //para recuperar valor email
     console.log("EMAIL:", emailAddress);

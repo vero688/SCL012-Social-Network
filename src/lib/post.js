@@ -1,13 +1,7 @@
-// INICIO DE POST -- VARINEA //
-firebase.initializeApp({
-    apiKey: "AIzaSyCJK1y95OD8KAEsm8rzYjeZLcwyJ6Hfa5A",
-    authDomain: "social-network-7c958.firebaseapp.com",
-    projectId: "social-network-7c958",
-});
-
+/* 
 var db = firebase.firestore();
 
-//agregar documentos
+//___________________CREAR POST___________________
 
 document.getElementById('postbutton').addEventListener('click',function(){
 	let postTittle2 = document.getElementById('postTittle').value;
@@ -28,15 +22,14 @@ document.getElementById('postbutton').addEventListener('click',function(){
 					})
 });
 
-// LEER DOCUMENTOS
+//___________________IMPRIMIR POST CREADO___________________
 
 db.collection("users").onSnapshot((querySnapshot) => {
-    postUsuario.innerHTML = '';
+    root.innerHTML = '';
 
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().Titulo}`);
-        postUsuario.innerHTML += 
-        
+        root.innerHTML += 
         ` 
         <h2 id="tittle">${doc.data().Titulo} </h2> 
         <textarea id="text">${doc.data().Texto}</textarea>
@@ -46,7 +39,7 @@ db.collection("users").onSnapshot((querySnapshot) => {
     });
 });
 
-// ELIMINAR DOCUMENTOS
+//___________________ELIMINAR POST___________________
 
 function postDeleted(id) {
     db.collection("users").doc(id).delete().then(function() {
@@ -54,6 +47,5 @@ function postDeleted(id) {
     }).catch(function(error) {
         console.error("Ups!, Ocurrio un error: ", error);
     });
-
 };
-
+*/
