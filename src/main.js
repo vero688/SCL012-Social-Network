@@ -77,6 +77,7 @@ let postText2 = document.getElementById('postText').value;
 db.collection("users").add({
       Titulo: postTittle2,
       Texto: postText2,
+      like: []
   })
   .then(function (docRef) {
       console.log("Document written with ID: ", docRef.id);
@@ -101,11 +102,58 @@ db.collection("users").onSnapshot((querySnapshot) => {
       <h2 id="tittle">${doc.data().Titulo} </h2> 
       <textarea id="text">${doc.data().Texto}</textarea>
       <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
+      
+      <button id="likePost" onclick="likePost(${doc.id})"> Me gusta </button> 
       <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
       `
   });
 });
 
+//___________________BOTON LIKE_________________
+
+function likePost(id) {
+
+  let user = firebase.auth().currentUser;	
+  db.collection('users').doc(id).get().then((resultado) => {
+
+		let post = resultado.data();
+
+		if (post.like == null || post.like == '') {
+			post.like = [];
+			console.log("entro al like vacio");
+		}
+
+		if (post.like.includes(user.uid)) {
+
+			for (let i = 0; i < post.like.length; i++) {
+
+				if (post.like[i] === user.uid) { //verifica si ya el usuario está en el array
+
+					post.like.splice(i, 1); // sentencia para eliminar un elemento de un array
+					
+					db.collection('users').doc(id).update({ // para actualizar el array
+						like: post.like
+					}); 
+
+				}
+			}
+		} else {
+
+			post.like.push(user.uid);
+			db.collection('users').doc(id).update({
+				like: post.like
+			});
+			
+		}
+
+		document.getElementById(`cantidadlikes-${doc.id}`).value = post.like.length;
+	})
+		.catch(function (error) {
+
+		});	
+};
+  
+  
 //___________________ELIMINAR POST___________________
 
 function postDeleted(id) {
@@ -115,6 +163,8 @@ function postDeleted(id) {
       console.error("Ups!, Ocurrio un error: ", error);
   });
 };
+
+
 
 
 //___________________REGISTRARSE___________________

@@ -1,51 +1,52 @@
-/* 
-var db = firebase.firestore();
 
-//___________________CREAR POST___________________
+// var db = firebase.firestore();
 
-document.getElementById('postbutton').addEventListener('click',function(){
-	let postTittle2 = document.getElementById('postTittle').value;
-	let postText2 = document.getElementById('postText').value;	
+// //___________________CREAR POST___________________
+
+// document.getElementById('postbutton').addEventListener('click',function(){
+// 	let postTittle2 = document.getElementById('postTittle').value;
+// 	let postText2 = document.getElementById('postText').value;	
 	
-	db.collection("users").add({
-        Titulo: postTittle2,
-        Texto: postText2,
-    })
-    .then(function (docRef) {
-        console.log("Document written with ID: ", docRef.id);
-        document.getElementById('postTittle').value = ''; // Una vez se haya generado el dato se dara un string limpio (reseteara la pag)
-        document.getElementById('postText').value = '';
+// 	db.collection("users").add({
+//         Titulo: postTittle2,
+//         Texto: postText2,
+//     })
 
-    })
-    .catch(function (error) {
-        console.error("Error adding document: ", error);
-					})
-});
+//     .then(function (docRef) {
+//         console.log("Document written with ID: ", docRef.id);
+//         document.getElementById('postTittle').value = ''; // Una vez se haya generado el dato se dara un string limpio (reseteara la pag)
+//         document.getElementById('postText').value = '';
 
-//___________________IMPRIMIR POST CREADO___________________
+//     })
+//     .catch(function (error) {
+//         console.error("Error adding document: ", error);
+// 					})
+// });
 
-db.collection("users").onSnapshot((querySnapshot) => {
-    root.innerHTML = '';
+// //___________________IMPRIMIR POST CREADO___________________
 
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().Titulo}`);
-        root.innerHTML += 
-        ` 
-        <h2 id="tittle">${doc.data().Titulo} </h2> 
-        <textarea id="text">${doc.data().Texto}</textarea>
-        <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
-        <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
-        `
-    });
-});
+// db.collection("users").onSnapshot((querySnapshot) => {
+//     root.innerHTML = '';
 
-//___________________ELIMINAR POST___________________
+//     querySnapshot.forEach((doc) => {
+//         console.log(`${doc.id} => ${doc.data().Titulo}`);
+//         root.innerHTML += 
+//         ` 
+//         <h2 id="tittle">${doc.data().Titulo} </h2> 
+//         <textarea id="text">${doc.data().Texto}</textarea>
+//         <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
+//         <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
+//         `
+//     });
+// });
 
-function postDeleted(id) {
-    db.collection("users").doc(id).delete().then(function() {
-        console.log("Vaya, vaya, has eliminado el post correctamente!");
-    }).catch(function(error) {
-        console.error("Ups!, Ocurrio un error: ", error);
-    });
-};
-*/
+// //___________________ELIMINAR POST___________________
+
+// function postDeleted(id) {
+//     db.collection("users").doc(id).delete().then(function() {
+//         console.log("Vaya, vaya, has eliminado el post correctamente!");
+//     }).catch(function(error) {
+//         console.error("Ups!, Ocurrio un error: ", error);
+//     });
+// };
+// */
