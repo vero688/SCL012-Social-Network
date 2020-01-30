@@ -56,3 +56,28 @@
 [debug] [2020-01-30T12:23:09.144Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-30T12:30:48.913Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:30:48.917Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-30T12:30:48.917Z] CLI Version:   7.12.1
+[debug] [2020-01-30T12:30:48.918Z] Platform:      darwin
+[debug] [2020-01-30T12:30:48.918Z] Node Version:  v13.6.0
+[debug] [2020-01-30T12:30:48.919Z] Time:          Thu Jan 30 2020 09:30:48 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-30T12:30:48.919Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:30:48.919Z] 
+[debug] [2020-01-30T12:30:48.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-30T12:30:48.955Z] > authorizing via signed-in user
+[debug] [2020-01-30T12:30:48.955Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-30T12:30:48.959Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+
+[debug] [2020-01-30T12:30:50.206Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T12:30:50.209Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+ 
+[debug] [2020-01-30T12:30:51.476Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-30T12:30:51.480Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+ 
+[debug] [2020-01-30T12:30:52.774Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
