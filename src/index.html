@@ -3,25 +3,29 @@
 
 <head>
 
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Social Network</title>
   <link rel="stylesheet" href="style.css" />
+<<<<<<< HEAD
   <script src="https://kit.fontawesome.com/8f6d312210.js" crossorigin="anonymous"></script>
   
  
 
+=======
+>>>>>>> 725ad41e881a4fb1654215a659891e9f8fad9853
   <!--FIRESTORE-->
   <!-- <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js"></script> -->
+  </script> -->
 
 </head>
 
 <body>
 
 
+  <div id='contentRecover' class="contentRecover">
 
     <div class="contentImg">
       <img class="logo" src="img/logo.png">
@@ -43,7 +47,7 @@
 
   <div id="social" class="social">
 <button id="btngmail"> <i class="fab fa-google-plus"></i></button>
-<button id="btnFace"> <i class="fab fa-google-plus"></i></button>
+<button id="btnFace"><i class="fab fa-facebook"></i></button>
 </div>
 
 <!-- CRUD, Crear, leer, editar y borrar -->
@@ -54,29 +58,26 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
-  
+  <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
   <!-- <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-tools.js"></script> -->
+
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-analytics.js"></script>
 
   <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyCJK1y95OD8KAEsm8rzYjeZLcwyJ6Hfa5A",
-      authDomain: "social-network-7c958.firebaseapp.com",
-      databaseURL: "https://social-network-7c958.firebaseio.com",
-      projectId: "social-network-7c958",
-      storageBucket: "social-network-7c958.appspot.com",
-      messagingSenderId: "533235702935",
-      appId: "1:533235702935:web:5b58d0628a18cc8c51ddd2",
-      measurementId: "G-N8NJGBC7MR"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+    
   </script>
+
+  <script type="module"src = "main.js" ></script>
+  <script type="module" src="recover.js"></script>
+  <script type="module" src="./lib/post.js"></script>
+
+
+
+ 
 </body>
 
-</html> 
+</html>
