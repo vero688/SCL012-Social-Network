@@ -29,10 +29,10 @@ document.getElementById('btngmail').addEventListener('click',authFire)
   
 export const authFacebook = ()=> {
 
-let provider = new firebase.auth.FacebookAuthProvider();
-
+const provider = new firebase.auth.FacebookAuthProvider();
 provider.setCustomParameters({
   'display': 'popup'
+};
   firebase.auth().signInWithRedirect(provider)
 
   firebase.auth().getRedirectResult().then(function(result) {
@@ -55,5 +55,5 @@ provider.setCustomParameters({
   });
 
 })
-}
+
 document.getElementById('btnFace').addEventListener('click',authFacebook)
