@@ -102,6 +102,7 @@ div, .root{
 
 }
 
+
 @media screen and (max-width:575.98px){
     .div{height: auto;
         flex-direction: column;
