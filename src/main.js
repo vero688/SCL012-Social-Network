@@ -102,23 +102,21 @@ db.collection("users").onSnapshot((querySnapshot) => {
       <h2 id="tittle">${doc.data().Titulo} </h2> 
       <textarea id="text">${doc.data().Texto}</textarea>
       <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
-      
-      <button id="likePost" onclick="likePost(${doc.id})"> Me gusta </button> 
+      <button id="likePost" onclick="likePost(${doc.id})"> Me gusta </button>  
       <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
       `
   });
 });
 
-//___________________BOTON LIKE_________________
+//___________________BOTON LIKE_________________DIANA
 
 function likePost(id) {
-
   let user = firebase.auth().currentUser;	
   db.collection('users').doc(id).get().then((resultado) => {
 
 		let post = resultado.data();
-
-		if (post.like == null || post.like == '') {
+    
+    if (post.like == null || post.like == '') {
 			post.like = [];
 			console.log("entro al like vacio");
 		}
