@@ -89,7 +89,7 @@ function showHome(user) {
         firebase.auth().signOut()
           .then(function () {
             document.location.href = "/";
-            //console.log('saliendo....')
+            
           })
           .catch(function (error) {
             console.log('error')
