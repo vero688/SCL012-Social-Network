@@ -1,5 +1,3 @@
-
-
 import * as views from './lib/index.js';
 import * as auth from './lib/auth.js';
 
@@ -50,57 +48,60 @@ function showHome(user) {
     `
     //___________________CREAR POST___________________
 
-document.getElementById('postbutton').addEventListener('click', savePost)
-const db = firebase.firestore();
-function savePost() { 
-  
-let postTittle2 = document.getElementById('postTittle').value;
-let postText2 = document.getElementById('postText').value;	
+    document.getElementById('postbutton').addEventListener('click', savePost)
+    const db = firebase.firestore();
 
-db.collection("users").add({
-      Titulo: postTittle2,
-      Texto: postText2,
-  })
-  .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      document.getElementById('postTittle').value = ''; // Una vez se haya generado el dato se dara un string limpio (reseteara la pag)
-      document.getElementById('postText').value = '';
+    function savePost() {
 
-  })
-  .catch(function (error) {
-      console.error("Error adding document: ", error);
+      let postTittle2 = document.getElementById('postTittle').value;
+      let postText2 = document.getElementById('postText').value;
+
+      db.collection("users").add({
+          Titulo: postTittle2,
+          Texto: postText2,
         })
-};
-//___________________IMPRIMIR POST CREADO___________________
+        .then(function (docRef) {
+          console.log("Document written with ID: ", docRef.id);
+          document.getElementById('postTittle').value = ''; // Una vez se haya generado el dato se dara un string limpio (reseteara la pag)
+          document.getElementById('postText').value = '';
 
-db.collection("users").onSnapshot((querySnapshot) => {
-  postUsuario.innerHTML = '';
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        })
+    };
+    //___________________IMPRIMIR POST CREADO___________________
 
-  querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().Titulo}`);
-      postUsuario.innerHTML += 
-      
-      ` 
+    db.collection("users").onSnapshot((querySnapshot) => {
+      postUsuario.innerHTML = '';
+
+      querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().Titulo}`);
+        postUsuario.innerHTML +=
+
+          ` 
       <h2 id="tittle">${doc.data().Titulo} </h2> 
       <textarea id="text">${doc.data().Texto}</textarea>
       <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
       <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
       `
-  });
-});
+      });
+    });
 
-//___________________ELIMINAR POST___________________
+    //___________________ELIMINAR POST___________________
 
-function postDeleted(id) {
-  db.collection("users").doc(id).delete().then(function() {
-      console.log("Vaya, vaya, has eliminado el post correctamente!");
-  }).catch(function(error) {
-      console.error("Ups!, Ocurrio un error: ", error);
-  });
-};
+    function postDeleted(id) {
+      db.collection("users").doc(id).delete().then(function () {
+        console.log("Vaya, vaya, has eliminado el post correctamente!");
+      }).catch(function (error) {
+        console.error("Ups!, Ocurrio un error: ", error);
+      });
+    };
 
+    //___________________CERRAR SESIÓN___________________
 
     document.getElementById('btnSignOff').addEventListener('click', signOff)
+
     function signOff() {
 
       firebase.auth().signOut()
@@ -122,7 +123,7 @@ function postDeleted(id) {
 
 function registerMe() {
   const root = document.getElementById('root');
-   root.innerHTML = `<h4>Crear Cuenta</h4>
+  root.innerHTML = `<h4>Crear Cuenta</h4>
   <input id="name" placeholder="Nombre y Apellido">
   <input id="date" type="date" placeholder="Fecha de Nacimiento">
   <form>
@@ -136,9 +137,9 @@ function registerMe() {
   <button id="btnRegisterMe">Registrarme</button>
   `
   document.getElementById('btnRegisterMe').addEventListener('click', register)
-  }
-  
-  
+}
+
+
 
 
 function register() {
@@ -168,9 +169,9 @@ function check() {
   let user = firebase.auth().currentUser;
 
   user.sendEmailVerification().then(function () {
-    // Email sent.
-    console.log('enviando correo...');
-  })
+      // Email sent.
+      console.log('enviando correo...');
+    })
     .catch(function (error) {
       // An error happened.
       console.log(error);
