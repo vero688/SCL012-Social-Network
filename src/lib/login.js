@@ -1,4 +1,4 @@
-//  Función que crea la pagina de inicio
+ //  Función que crea la pagina de inicio
 function showLogIn() {
   window.location.hash = '/login';
     root.innerHTML = ` 
