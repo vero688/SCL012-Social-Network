@@ -1,12 +1,36 @@
 
 
-import * as views from './lib/index.js';
-import * as auth from './lib/auth.js';
+import * as views from './lib/login.js';
+import * as home from '/lib/home.js';
+import * as register from '/lib/register.js';
+views.showLogIn();
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyCJK1y95OD8KAEsm8rzYjeZLcwyJ6Hfa5A",
+  authDomain: "social-network-7c958.firebaseapp.com",
+  databaseURL: "https://social-network-7c958.firebaseio.com",
+  projectId: "social-network-7c958",
+  storageBucket: "social-network-7c958.appspot.com",
+  messagingSenderId: "533235702935",
+  appId: "1:533235702935:web:5b58d0628a18cc8c51ddd2",
+  measurementId: "G-N8NJGBC7MR"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 
 // Llamada para función que tiene formulario de Login
-views.showLogIn();
+
+
+// Llamada para función de recuperar contraseña
+const recoverBtn = document.getElementById("recoverBtn");
+  recoverBtn.addEventListener('click', () => {  
+  views.recoverPass();
+
+  })
 // Llamada para función que contiene formulario de registro
-document.getElementById('registerMe').addEventListener('click', registerMe)
+document.getElementById('registerMe').addEventListener('click', register.registerMe)
 
 
 // inicio de sesión
@@ -14,10 +38,11 @@ document.getElementById('logIn').addEventListener('click', (prevent) => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   prevent.preventDefault();
-  auth.logIn(email, password);
+  views.logIn(email, password);
 
 })
 
+<<<<<<< HEAD
 function showHome(user) {
   if (user.emailVerified) {
 
@@ -224,12 +249,15 @@ function check() {
     });
 }
 
+=======
+// Función observador
+>>>>>>> ae6f2c0b49f8e0ab6986fa96c782c48a95b06ef3
 function observer() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
-      showHome(user);
-      savePost();
+      home.showHome(user);
+      home.savePost();
       let displayName = user.displayName;
       let email = user.email;
       let emailVerified = user.emailVerified;

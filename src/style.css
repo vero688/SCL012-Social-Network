@@ -42,7 +42,7 @@ button{
     padding: 6px 50px;
     text-decoration: none;
     color:white;
-    background:#ffba01;
+    background:rgb(248, 143, 5);
     display:flex;
     justify-content: center;
     flex-direction: column;
