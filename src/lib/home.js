@@ -27,10 +27,22 @@ function showHome(user) {
   
   
       <!-------------- Cerrar Sesión -------------->
-      <button id="btnSignOff">Cerrar Sesión</button>
+      <button id="btnSignOff">Cerrar Sesión</button>  `
+      
+      document.getElementById('btnSignOff').addEventListener('click', signOff)
+      function signOff() {
+  
+        firebase.auth().signOut()
+          .then(function () {
+            document.location.href = "/";
+            
+          })
+          .catch(function (error) {
+            console.log('error')
+          });
+      }
 
      
-      `
     //___________________CREAR POST___________________
 
     document.getElementById('postbutton').addEventListener('click', savePost)
@@ -59,6 +71,7 @@ function showHome(user) {
     };
 
     //___________________Like Post___________________
+    
     function likePost(id) {
       let user = firebase.auth().currentUser;
       db.collection('users').doc(id).get().then((resultado) => {
@@ -160,6 +173,4 @@ function showHome(user) {
     });
   }
 }
-export {
-showHome
-}
+export {showHome}
