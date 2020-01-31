@@ -45,6 +45,7 @@ function showHome(user) {
   db.collection("users").add({
         Titulo: postTittle2,
         Texto: postText2,
+        like: [],
     })
     .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
@@ -56,57 +57,7 @@ function showHome(user) {
         console.error("Error adding document: ", error);
           })
   };
-  //___________________IMPRIMIR POST CREADO___________________
-  
-  db.collection("users").onSnapshot((querySnapshot) => {
-    postUsuario.innerHTML = '';
-  
-    querySnapshot.forEach((doc) => {
-        console.log(`${doc.id} => ${doc.data().Titulo}`);
-        postUsuario.innerHTML += 
-        
-        ` 
-        <h2 id="tittle">${doc.data().Titulo} </h2> 
-        <textarea id="text">${doc.data().Texto}</textarea>
-        <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
-        <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
-        <button id="likePost" onclick="likePost('${doc.id}')"> Me gusta </button>`
-    });
-  });
-  
-  //___________________ELIMINAR POST___________________
-  
-  function postDeleted(id) {
-    db.collection("users").doc(id).delete().then(function() {
-        console.log("Vaya, vaya, has eliminado el post correctamente!");
-    }).catch(function(error) {
-        console.error("Ups!, Ocurrio un error: ", error);
-    });
-  };
-  
-  
-      document.getElementById('btnSignOff').addEventListener('click', signOff)
-      function signOff() {
-  
-        firebase.auth().signOut()
-          .then(function () {
-            document.location.href = "/";
-            
-          })
-          .catch(function (error) {
-            console.log('error')
-          });
-      }
-  
-    }
-  }
-
-  export{showHome}
-
-
-
-//___________________BOTON ME GUSTA___________________(AUN NO FUNCIONA)
-
+  // dar like
   function likePost(id) {
     let user = firebase.auth().currentUser;	
     db.collection('users').doc(id).get().then((resultado) => {
@@ -141,9 +92,57 @@ function showHome(user) {
               
           }
   
-          document.getElementById(`cantidadlikes-${doc.id}`).value = post.like.length;
+          // document.getElementById(`cantidadlikes-${doc.id}`).value = post.like.length;
       })
           .catch(function (error) {
   
           });	
   };
+  //___________________IMPRIMIR POST CREADO___________________
+  
+  db.collection("users").onSnapshot((querySnapshot) => {
+    postUsuario.innerHTML = '';
+  
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().Titulo}`);
+        postUsuario.innerHTML += 
+        
+        ` 
+        <h2 id="tittle">${doc.data().Titulo} </h2> 
+        <textarea id="text">${doc.data().Texto}</textarea>
+        <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
+        <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
+        <button id="likePost"> Me gusta </button>`
+        document.getElementById('likePost').addEventListener('click', () => {
+          likePost(doc.id);
+        });
+  //___________________ELIMINAR POST___________________
+  
+  function postDeleted(id) {
+    db.collection("users").doc(id).delete().then(function() {
+        console.log("Vaya, vaya, has eliminado el post correctamente!");
+    }).catch(function(error) {
+        console.error("Ups!, Ocurrio un error: ", error);
+    });
+  };
+  
+  
+      document.getElementById('btnSignOff').addEventListener('click', signOff)
+      function signOff() {
+  
+        firebase.auth().signOut()
+          .then(function () {
+            document.location.href = "/";
+            
+          })
+          .catch(function (error) {
+            console.log('error')
+          });
+      }
+  
+    })
+  });
+
+    }
+  }
+  export{showHome}
