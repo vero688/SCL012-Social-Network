@@ -1,12 +1,35 @@
 
 
-import * as views from './lib/index.js';
-import * as auth from './lib/auth.js';
+import * as views from './lib/login.js';
+import * as home from '/lib/home.js';
+import * as register from '/lib/register.js';
+views.showLogIn();
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyCJK1y95OD8KAEsm8rzYjeZLcwyJ6Hfa5A",
+  authDomain: "social-network-7c958.firebaseapp.com",
+  databaseURL: "https://social-network-7c958.firebaseio.com",
+  projectId: "social-network-7c958",
+  storageBucket: "social-network-7c958.appspot.com",
+  messagingSenderId: "533235702935",
+  appId: "1:533235702935:web:5b58d0628a18cc8c51ddd2",
+  measurementId: "G-N8NJGBC7MR"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
 // Llamada para función que tiene formulario de Login
-views.showLogIn();
+
+
+// Llamada para función de recuperar contraseña
+const recoverBtn = document.getElementById("recoverBtn");
+  recoverBtn.addEventListener('click', () => {  
+  views.recoverPass();
+
+  })
 // Llamada para función que contiene formulario de registro
-document.getElementById('registerMe').addEventListener('click', registerMe)
+document.getElementById('registerMe').addEventListener('click', register.registerMe)
 
 
 // inicio de sesión
@@ -14,175 +37,16 @@ document.getElementById('logIn').addEventListener('click', (prevent) => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
   prevent.preventDefault();
-  auth.logIn(email, password);
+  views.logIn(email, password);
 
 })
-
-function showHome(user) {
-  if (user.emailVerified) {
-
-    root.innerHTML = `
-    <h1>DP</h1>
-    <br>
-    <button id="homeMuro">HOME</button>
-    <button id="perfilUsuario">fotoUsuario</button>
-    <br>
-    <!-------------- Buscador -------------->
-    <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
-
-    <!-------------- POST Usuario -------------->
-
-    <h1>Haz una publicación</h1>
-
-    <!-------------- Titulo POST -------------->
-    <input type="text" class="searchClass" Id="postTittle" size="15" maxlength="20" placeholder="Titulo">
-
-    <!-------------- Comentario POST -------------->
-    <input type="text" class="searchClass" Id="postText" rows="10" cols="40" placeholder="Escribe aquí tu comentario">
-
-    <!-------------- Boton Publicar POST -------------->
-    <button id="postbutton">Publicar</button>
-    <div Id="postUsuario"></div>
-
-
-    <!-------------- Cerrar Sesión -------------->
-    <button id="btnSignOff">Cerrar Sesión</button>
-    `
-    //___________________CREAR POST___________________
-
-document.getElementById('postbutton').addEventListener('click', savePost)
-const db = firebase.firestore();
-function savePost() { 
-  
-let postTittle2 = document.getElementById('postTittle').value;
-let postText2 = document.getElementById('postText').value;	
-
-db.collection("users").add({
-      Titulo: postTittle2,
-      Texto: postText2,
-  })
-  .then(function (docRef) {
-      console.log("Document written with ID: ", docRef.id);
-      document.getElementById('postTittle').value = ''; // Una vez se haya generado el dato se dara un string limpio (reseteara la pag)
-      document.getElementById('postText').value = '';
-
-  })
-  .catch(function (error) {
-      console.error("Error adding document: ", error);
-        })
-};
-//___________________IMPRIMIR POST CREADO___________________
-
-db.collection("users").onSnapshot((querySnapshot) => {
-  postUsuario.innerHTML = '';
-
-  querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data().Titulo}`);
-      postUsuario.innerHTML += 
-      
-      ` 
-      <h2 id="tittle">${doc.data().Titulo} </h2> 
-      <textarea id="text">${doc.data().Texto}</textarea>
-      <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
-      <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
-      `
-  });
-});
-
-//___________________ELIMINAR POST___________________
-
-function postDeleted(id) {
-  db.collection("users").doc(id).delete().then(function() {
-      console.log("Vaya, vaya, has eliminado el post correctamente!");
-  }).catch(function(error) {
-      console.error("Ups!, Ocurrio un error: ", error);
-  });
-};
-
-
-    document.getElementById('btnSignOff').addEventListener('click', signOff)
-    function signOff() {
-
-      firebase.auth().signOut()
-        .then(function () {
-          document.location.href = "/";
-          //console.log('saliendo....')
-        })
-        .catch(function (error) {
-          console.log('error')
-        });
-    }
-
-  }
-}
-
-
-
-//___________________REGISTRARSE___________________
-
-function registerMe() {
-  const root = document.getElementById('root');
-   root.innerHTML = `<h4>Crear Cuenta</h4>
-  <input id="name" placeholder="Nombre y Apellido">
-  <input id="date" type="date" placeholder="Fecha de Nacimiento">
-  <form>
-  <input type="radio" name="gender" value="male" > Masculino
-  <input type="radio" name="gender" value="female"> Femenino
-  <input type="radio" name="gender" value="other"> Otro
-  </form>
-  <input id="registerEmail" type="email" placeholder="Ingresa tu Email">
-  <p>Tu contraseña debe tener un mínimo de 6 caracteres númericos</p>
-  <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
-  <button id="btnRegisterMe">Registrarme</button>
-  `
-  document.getElementById('btnRegisterMe').addEventListener('click', register)
-  }
-  
-  
-
-
-function register() {
-  const registerEmail = document.getElementById('registerEmail').value;
-  const registerPassword = document.getElementById('registerPassword').value;
-
-
-  firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
-    .then(function () {
-      check()
-      alert('La cuenta se ha creado exitosamente');
-    })
-    .catch(function (error) {
-      // Handle Errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      alert('Debe completar todos los campos')
-      // ...
-      console.log(errorCode);
-      console.log(errorMessage);
-    });
-};
-
-//___________________CERRAR SESIÓN___________________
-
-function check() {
-  let user = firebase.auth().currentUser;
-
-  user.sendEmailVerification().then(function () {
-    // Email sent.
-    console.log('enviando correo...');
-  })
-    .catch(function (error) {
-      // An error happened.
-      console.log(error);
-    });
-}
-
+// Llamada a función
+// Función observador
 function observer() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
-      showHome(user);
-      savePost();
+      home.showHome(user);
       let displayName = user.displayName;
       let email = user.email;
       let emailVerified = user.emailVerified;
@@ -197,7 +61,12 @@ function observer() {
 
   });
 
+<<<<<<< HEAD
  }
  observer();
 
 
+=======
+}
+observer();
+>>>>>>> 0c410981f74d67b9ceea20830e37e8412c90b244

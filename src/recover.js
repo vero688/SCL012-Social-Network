@@ -7,8 +7,7 @@ const recoverBtn = document.getElementById("recoverBtn");
   recoverPass();
 
   })
-
-  
+ 
 
 let recoverPass = function(){ // para invocar a la funcion de firebase
     let auth = firebase.auth();

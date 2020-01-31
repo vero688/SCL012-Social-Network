@@ -1,6 +1,6 @@
 *{
-    margin: 10%;
-    padding: 10%;
+    margin: 10px;
+    padding: 10px;
     box-sizing: border-box;
 }
 body{
@@ -18,14 +18,14 @@ body{
 
 /* BUSCADOR VARINEA */
 .searchClass {   
-    font-size: 16%;
+    font-size: 16px;
     font-weight: 500;
       font-family: 'Raleway', sans-serif;
       font-weight: 400;
     color: #8b8a8a;
       line-height: 1.3;
       padding: 1% 2% 1% 2%;
-      width: 500%;
+      width: 500px;
       max-width: 100%; 
       box-sizing: border-box;
       margin: 2% 2% 2% 2%;
@@ -37,40 +37,28 @@ body{
      
   }
 
- button{
-    
+button{
+    display: inline-block;
+    padding: 6px 50px;
     text-decoration: none;
     color:white;
-    background:#ffba01;
+    background:rgb(248, 143, 5);
+    display:flex;
     justify-content: center;
     flex-direction: column;
     display: flex;
     flex-flow: column nowrap;
-    border-radius: 7px;
-    border: none;
-    height: 44px;
-    width: 100%;
-    text-align: center;
-    align-items: center;
     }
+
  
- .contentImg{
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    width: 100%;
-    margin: 0 auto;
- }
 
 h4{
     color: white;
-   display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+    display:flex;
+    flex-direction: column;
+    display: flex;
+   flex-flow: column nowrap;
+   max-width: 1000px;
 }
 #email{
     display:flex;
@@ -81,34 +69,82 @@ h4{
 
 }
 
+.logo{
+    
+    width: 26%;
+    height: auto;
+    margin:auto;
+    display:block;  
+}
 
 .withch{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    width: 100%;
+    height: auto;
+    margin:none;
+    border:none;
+    display: block;
+    padding: none;
+    display:flex;
     justify-content: center;
-    align-items: center;
-    align-content: center;
+   
 }
 
- /*MEDIAS QUERYS*/
+div, .root{
+    justify-content: center;
+    border: none;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    flex-flow: column nowrap;
+    top: 50%;
+    left: 40%;
+    position: absolute;
+    
 
- @media (min-width: 320px) and (max-width: 767px) {
-  
-    .contentImg {
-        padding-left: 0px;
-       padding-right: 0px;
-       margin-right: 0px;
-       margin-left: 0px;
-       width: 80%;
-       margin: 0 auto;
-    }
-    .withch{
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-right: 0px;
-        margin-left: 0px;
-        width: 80%;
-        margin: 0 auto;
+}
+
+
+@media screen and (max-width:575.98px){
+    .div{height: auto;
+        flex-direction: column;
+        float: left;
+        box-sizing: border-box;
+    }  
+    .button{
+        height: auto;
+        flex-direction: column;
+        float: left;
+        box-sizing: border-box;
     }
 }
+
+@media (min-width: 576px) and (max-width: 767.98px){
+    .h4{height: auto;
+        flex-direction: column;
+        float: left;
+        box-sizing: border-box;
+    }  
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .withch{height: auto;
+        flex-direction: column;
+        float: left;
+        box-sizing: border-box;
+    }  
+ }
+
+ @media (min-width: 992px) and (max-width: 1199.98px) { 
+    body{height: auto;
+        flex-direction: column;
+        float: left;
+        box-sizing: border-box;
+    }  
+ }
+
+ @media (min-width: 1200px) { 
+    .button{height: auto;
+        flex-direction: column;
+        float: left;
+        box-sizing: border-box;
+    }  
+ }
