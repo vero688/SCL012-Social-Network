@@ -27,10 +27,23 @@ function showHome(user) {
   
   
       <!-------------- Cerrar Sesión -------------->
-      <button id="btnSignOff">Cerrar Sesión</button>
+      <button id="btnSignOff">Cerrar Sesión</button>  `
+      
+      document.getElementById('btnSignOff').addEventListener('click', signOff)
+      function signOff() {
+  
+        firebase.auth().signOut()
+          .then(function () {
+            document.location.href = "/";
+            
+          })
+          .catch(function (error) {
+            console.log('error')
+          });
+      }
 
-      <button id="likePost">Me gusta </button>
-      `
+  
+    
       //___________________CREAR POST___________________
 
   document.getElementById('postbutton').addEventListener('click', savePost)
@@ -127,18 +140,6 @@ function showHome(user) {
   };
   
   
-      document.getElementById('btnSignOff').addEventListener('click', signOff)
-      function signOff() {
-  
-        firebase.auth().signOut()
-          .then(function () {
-            document.location.href = "/";
-            
-          })
-          .catch(function (error) {
-            console.log('error')
-          });
-      }
   
     })
   });
