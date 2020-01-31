@@ -1,4 +1,4 @@
-// document.getElementById('btngmail').addEventListener('click',authFire)
+
 // export const authFire = () => {
 
 //   const provider = new firebase.auth.GoogleAuthProvider();
@@ -15,5 +15,5 @@
 // console.error(error)
 // });
 // }
-
+// document.getElementById('btngmail').addEventListener('click', authFire)
 

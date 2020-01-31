@@ -41,14 +41,13 @@ document.getElementById('logIn').addEventListener('click', (prevent) => {
   views.logIn(email, password);
 
 })
-
+// Llamada a función
 // Función observador
 function observer() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
       home.showHome(user);
-      home.savePost();
       let displayName = user.displayName;
       let email = user.email;
       let emailVerified = user.emailVerified;
