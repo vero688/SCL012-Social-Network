@@ -19,7 +19,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-
 // Llamada para función que tiene formulario de Login
 
 
