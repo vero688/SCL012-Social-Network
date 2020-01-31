@@ -8,8 +8,6 @@ function showLogIn() {
     <input id="email" type="email" placeholder="ingresa tu Email" required>
     <input id="password" type="password" placeholder="Ingresa tu contraseña" required>
     <button id="logIn">Iniciar Sesión</button>
-    <button id="btngmail"> <i class="fab fa-google-plus"></i></button>
-    </form>
     <img class="witch" src="img/brujo.png">
     <button id="registerMe">Registrarme</button>
   

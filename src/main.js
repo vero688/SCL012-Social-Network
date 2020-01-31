@@ -5,7 +5,7 @@ import * as home from '/lib/home.js';
 import * as register from '/lib/register.js';
 views.showLogIn();
 // Your web app's Firebase configuration
-var firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyCJK1y95OD8KAEsm8rzYjeZLcwyJ6Hfa5A",
   authDomain: "social-network-7c958.firebaseapp.com",
   databaseURL: "https://social-network-7c958.firebaseio.com",
@@ -61,12 +61,7 @@ function observer() {
 
   });
 
-<<<<<<< HEAD
  }
  observer();
 
 
-=======
-}
-observer();
->>>>>>> 0c410981f74d67b9ceea20830e37e8412c90b244
