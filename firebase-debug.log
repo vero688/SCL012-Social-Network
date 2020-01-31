@@ -56,3 +56,111 @@
 [debug] [2020-01-30T12:23:09.144Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-30T12:30:48.913Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:30:48.917Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-30T12:30:48.917Z] CLI Version:   7.12.1
+[debug] [2020-01-30T12:30:48.918Z] Platform:      darwin
+[debug] [2020-01-30T12:30:48.918Z] Node Version:  v13.6.0
+[debug] [2020-01-30T12:30:48.919Z] Time:          Thu Jan 30 2020 09:30:48 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-30T12:30:48.919Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:30:48.919Z] 
+[debug] [2020-01-30T12:30:48.954Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-30T12:30:48.955Z] > authorizing via signed-in user
+[debug] [2020-01-30T12:30:48.955Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-30T12:30:48.959Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+
+[debug] [2020-01-30T12:30:50.206Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T12:30:50.209Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+ 
+[debug] [2020-01-30T12:30:51.476Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-30T12:30:51.480Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+ 
+[debug] [2020-01-30T12:30:52.774Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-30T12:40:36.245Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:40:36.249Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-30T12:40:36.249Z] CLI Version:   7.12.1
+[debug] [2020-01-30T12:40:36.249Z] Platform:      darwin
+[debug] [2020-01-30T12:40:36.249Z] Node Version:  v13.6.0
+[debug] [2020-01-30T12:40:36.250Z] Time:          Thu Jan 30 2020 09:40:36 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-30T12:40:36.250Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T12:40:36.251Z] 
+[debug] [2020-01-30T12:40:36.267Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-30T12:40:36.268Z] > authorizing via signed-in user
+[debug] [2020-01-30T12:40:36.268Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-30T12:40:36.271Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+
+[debug] [2020-01-30T12:40:37.468Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T12:40:37.472Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+ 
+[debug] [2020-01-30T12:40:38.588Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-30T12:40:38.592Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+ 
+[debug] [2020-01-30T12:40:39.882Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-30T18:29:27.867Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T18:29:27.870Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-30T18:29:27.871Z] CLI Version:   7.12.1
+[debug] [2020-01-30T18:29:27.871Z] Platform:      darwin
+[debug] [2020-01-30T18:29:27.871Z] Node Version:  v13.6.0
+[debug] [2020-01-30T18:29:27.872Z] Time:          Thu Jan 30 2020 15:29:27 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-30T18:29:27.873Z] ----------------------------------------------------------------------
+[debug] [2020-01-30T18:29:27.873Z] 
+[debug] [2020-01-30T18:29:27.895Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-30T18:29:27.895Z] > authorizing via signed-in user
+[debug] [2020-01-30T18:29:27.895Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-30T18:29:27.897Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-30T18:29:27.898Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-30T18:29:28.056Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T18:29:28.067Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+
+[debug] [2020-01-30T18:29:29.260Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-30T18:29:29.262Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+ 
+[debug] [2020-01-30T18:29:30.641Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-30T18:29:30.646Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+ 
+[debug] [2020-01-30T18:29:31.917Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-01-31T12:14:24.810Z] ----------------------------------------------------------------------
+[debug] [2020-01-31T12:14:24.815Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-01-31T12:14:24.815Z] CLI Version:   7.12.1
+[debug] [2020-01-31T12:14:24.815Z] Platform:      darwin
+[debug] [2020-01-31T12:14:24.815Z] Node Version:  v13.6.0
+[debug] [2020-01-31T12:14:24.817Z] Time:          Fri Jan 31 2020 09:14:24 GMT-0300 (hora de verano de Chile)
+[debug] [2020-01-31T12:14:24.817Z] ----------------------------------------------------------------------
+[debug] [2020-01-31T12:14:24.817Z] 
+[debug] [2020-01-31T12:14:24.837Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-31T12:14:24.838Z] > authorizing via signed-in user
+[debug] [2020-01-31T12:14:24.838Z] [iam] checking project social-network-7c958 for permissions ["firebase.projects.get"]
+[debug] [2020-01-31T12:14:24.840Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-31T12:14:24.841Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-31T12:14:24.974Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-31T12:14:24.982Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/social-network-7c958:testIamPermissions  
+
+[debug] [2020-01-31T12:14:26.250Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-31T12:14:26.252Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958  
+ 
+[debug] [2020-01-31T12:14:27.469Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/mac/Desktop/Laboratoria/SCL012-Social-Network'...
+[info] 
+[debug] [2020-01-31T12:14:27.473Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/social-network-7c958/webApps/-/config  
+ 
+[debug] [2020-01-31T12:14:28.309Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
