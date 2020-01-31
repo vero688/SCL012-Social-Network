@@ -1,17 +1,15 @@
-
-export const authFire = () => {
+//inicio con google
+ export const authFire = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
+
 
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
-  firebase.auth().signInWithPopup(provider).then(function(result){
-
-    let token= result.credencial.accessToken;
-
-  let user =resul.user;
-console.log(user);
-
-}).catch(function(error) {
+  firebase.auth().signInWithPopup(provider).then(function (result){
+     let token= result.credencial.accessToken;
+     let user =resul.user;
+     console.log(user)
+    }).catch(function(error) {
 let errorCode= error.code;
 let errorMessage= error.message;
 let email= error.email;
@@ -19,41 +17,32 @@ let credential= error.credential;
 console.error(error)
 
 });
+document.getElementById('btngmail').addEventListener('click',authFire);
 }
 
 
-document.getElementById('btngmail').addEventListener('click',authFire)
-
 
 //inicio con Facebook//
-  
-export const authFacebook = ()=> {
 
+ export const authFacebook = ()=> {
 const provider = new firebase.auth.FacebookAuthProvider();
-provider.setCustomParameters({
-  'display': 'popup'
-};
-  firebase.auth().signInWithRedirect(provider)
+  
+firebase.auth().signInWithPopup(provider).then(function(result) {
+  
+  let token = result.credential.accessToken;
+  
+  let user = result.user;
 
-  firebase.auth().getRedirectResult().then(function(result) {
-    if (result.credential) {
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      var token = result.credential.accessToken;
-      // ...
-    }
-    // The signed-in user info.
-    var user = result.user;
-  }).catch(function(error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
-  });
-
-})
-
-document.getElementById('btnFace').addEventListener('click',authFacebook)
+}).catch(function(error) {
+  
+  let errorCode = error.code;
+  let errorMessage = error.message;
+ 
+  let email = error.email;
+  
+  let credential = error.credential;
+  
+});
+  
+document.getElementById ('btnFace').addEventListener('click',authFacebook);
+ 
