@@ -42,15 +42,8 @@ function showHome(user) {
           });
       }
 
-<<<<<<< HEAD
-  
-    
-      //___________________CREAR POST___________________
-=======
      
-      `
     //___________________CREAR POST___________________
->>>>>>> 0c410981f74d67b9ceea20830e37e8412c90b244
 
     document.getElementById('postbutton').addEventListener('click', savePost)
 
@@ -175,6 +168,4 @@ function showHome(user) {
 
   }
 }
-export {
-  showHome
-}
+export {showHome}
