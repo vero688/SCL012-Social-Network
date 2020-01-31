@@ -108,12 +108,19 @@ function showHome(user) {
         console.log(`${doc.id} => ${doc.data().Titulo}`);
         postUsuario.innerHTML +=
 
-          ` 
+        ` 
         <h2 id="tittle">${doc.data().Titulo} </h2> 
         <textarea id="text">${doc.data().Texto}</textarea>
+
+        <!-------------- Boton Borrar POST -------------->
         <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
+
+        <!-------------- Boton Editar POST -------------->
         <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
-        <button id="likePost"> Me gusta </button>`
+
+        <!-------------- Boton Like POST -------------->
+        <button id="likePost"> Me gusta </button>
+        `
         
         document.getElementById('postDeleted').addEventListener('click', () => {
           postDeleted(doc.id);
@@ -122,6 +129,7 @@ function showHome(user) {
         document.getElementById('likePost').addEventListener('click', () => {
           likePost(doc.id);
         });
+
         //___________________Eliminar Post___________________
 
         function postDeleted(id) {
@@ -148,14 +156,10 @@ function showHome(user) {
               console.log('error')
             });
         }
-
       });
-
-
     });
-
   }
 }
 export {
-  showHome
+showHome
 }

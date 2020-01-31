@@ -41,8 +41,8 @@ function registerMe() {
         console.log(errorMessage);
       });
   };
-  //___________________CERRAR SESIÓN___________________
-// Función cerrar sesión con firebase
+//___________________CERRAR SESIÓN___________________
+
 function check() {
     let user = firebase.auth().currentUser;
   
