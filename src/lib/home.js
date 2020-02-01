@@ -126,10 +126,10 @@ function showHome(user) {
         <textarea id="text">${doc.data().Texto}</textarea>
 
         <!-------------- Boton Borrar POST -------------->
-        <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
+        <button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
 
         <!-------------- Boton Editar POST -------------->
-        <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
+        <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
 
         <!-------------- Boton Like POST -------------->
         <button id="likePost"> Me gusta </button>
@@ -145,15 +145,20 @@ function showHome(user) {
 
         //___________________Eliminar Post___________________
 
-        function postDeleted(id) {
-          db.collection("users").doc(id).delete().then(function () {
-            console.log("Vaya, vaya, has eliminado el post correctamente!");
-          }).catch(function (error) {
-            console.error("Ups!, Ocurrio un error: ", error);
-          });
-        };
-
-
+        function postDeleted(id) { 
+            if (confirm('¿Realmente deseas eliminar la publicación?')) {
+              
+                db.collection("users").doc(id).delete()
+                .then(function () {
+                  }).catch(function (error) {
+                    console.error("Error removing document: ", error);
+                  });
+                }
+               else {
+                console.log('Hay un problema con el id del post lo trae null');
+              }
+           
+          }
         //___________________Cerrar Sesión___________________
 
         document.getElementById('btnSignOff').addEventListener('click', signOff);
