@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+
+
 import * as views from './lib/login.js';
 import * as home from '/lib/home.js';
 import * as register from '/lib/register.js';
@@ -12,21 +13,23 @@ export const firebaseConfig = {
   storageBucket: 'social-network-7c958.appspot.com',
   messagingSenderId: '533235702935',
   appId: '1:533235702935:web:5b58d0628a18cc8c51ddd2',
-  measurementId: 'G-N8NJGBC7MR',
-}
+  measurementId: 'G-N8NJGBC7MR'
+};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 // Llamada para función que tiene formulario de Login
 
+
 // Llamada para función de recuperar contraseña
 const recoverBtn = document.getElementById('recoverBtn');
 recoverBtn.addEventListener('click', () => {
   views.recoverPass();
 })
+
 // Llamada para función que contiene formulario de registro
-document.getElementById('registerMe').addEventListener('click', register.registerMe);
+document.getElementById('registerMe').addEventListener('click', register.registerMe)
 
 // inicio de sesión
 document.getElementById('logIn').addEventListener('click', (prevent) => {
@@ -34,8 +37,7 @@ document.getElementById('logIn').addEventListener('click', (prevent) => {
   const password = document.getElementById('password').value;
   prevent.preventDefault();
   views.logIn(email, password);
-
-})
+});
 // Llamada a función
 // Función observador
 function observer() {
@@ -43,15 +45,16 @@ function observer() {
     if (user) {
       // User is signed in.
       home.showHome(user);
-      let displayName = user.displayName;
-      let email = user.email;
-      let emailVerified = user.emailVerified;
-      let photoURL = user.photoURL;
-      let isAnonymous = user.isAnonymous;
-      let uid = user.uid;
-      let providerData = user.providerData;
+      const displayName = user.displayName;
+      const email = user.email;
+      const emailVerified = user.emailVerified;
+      const photoURL = user.photoURL;
+      const isAnonymous = user.isAnonymous;
+      const uid = user.uid;
+      const providerData = user.providerData;
       // ...
-    })
-}
+};
+});
+};
 
 observer();
