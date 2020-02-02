@@ -4,16 +4,14 @@ function showHome(user) {
     window.location.hash = '/home';
     // eslint-disable-next-line no-undef
     root.innerHTML = `
-      <h1>DP</h1>
-      <br>
+      <h1>SPARROW PLAYER</h1>
+      
       <button id="homeMuro">HOME</button>
-      <button id="perfilUsuario">fotoUsuario</button>
-      <br>
+
       <!-------------- Buscador -------------->
       <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
   
       <!-------------- POST Usuario -------------->
-  
       <h1>Haz una publicación</h1>
   
       <!-------------- Titulo POST -------------->
@@ -24,51 +22,48 @@ function showHome(user) {
   
       <!-------------- Boton Publicar POST -------------->
       <button id="postbutton">Publicar</button>
+
       <div id="postUsuario"></div>
   
-  
       <!-------------- Cerrar Sesión -------------->
-      <button id="btnSignOff">Cerrar Sesión</button>  `
+      <button id="btnSignOff">Cerrar Sesión</button>  
+      `;
 
-    // eslint-disable-next-line no-use-before-define
-    document.getElementById('btnSignOff').addEventListener('click', signOff)
-
-    function signOff() {
+    document.getElementById('btnSignOff').addEventListener('click', () => {
       firebase.auth().signOut()
-        .then(function () {
-          document.location.href = "/";
+        .then(() => {
+          document.location.href = '/';
         })
-        .catch(function (error) {
-          alert('error')
+        .catch(() => {
+          alert('error');
         });
-    }
+    });
 
 
     // ___________________CREAR POST___________________
+
     const db = firebase.firestore();
-    document.getElementById('postbutton').addEventListener('click', savePost)
-    function savePost() {
-      let postTittle2 = document.getElementById('postTittle').value;
-      let postText2 = document.getElementById('postText').value;
-      db.collection("users").add({
-          Titulo: postTittle2,
-          Texto: postText2,
-          like: [],
-        })
-        .then(function (docRef) {
-          console.log("Document written with ID: ", docRef.id);
+    document.getElementById('postbutton').addEventListener('click', () => {
+      const postTittle2 = document.getElementById('postTittle').value;
+      const postText2 = document.getElementById('postText').value;
+      db.collection('users').add({
+        Titulo: postTittle2,
+        Texto: postText2,
+      })
+        .then(() => {
+          // console.log("Document written with ID: ", docRef.id);
           document.getElementById('postTittle').value = ''; // Una vez se haya generado el dato se dara un string limpio (reseteara la pag)
           document.getElementById('postText').value = '';
         })
-        .catch(function (error) {
-          console.error("Error adding document: ", error);
-        })
-    };
+        .catch(() => {
+          // console.error("Error adding document: ", error);
+        });
+    });
 
     // ___________________Like Post___________________
 
     function likePost(id) {
-      let user = firebase.auth().currentUser;
+      const user = firebase.auth().currentUser;
       db.collection('users').doc(id).get().then((resultado) => {
           let post = resultado.data();
           if (post.like == null || post.like == '') {
@@ -93,7 +88,8 @@ function showHome(user) {
         })
         .catch(function (error) {
         });
-    };
+}
+
     // ___________________IMPRIMIR POST CREADO___________________
 
     db.collection('users').onSnapshot((querySnapshot) => {
@@ -104,13 +100,15 @@ function showHome(user) {
 
           += ` 
         <h2 id="tittle">${doc.data().Titulo} </h2> 
+
         <textarea id="text">${doc.data().Texto}</textarea>
 
         <!-------------- Boton Borrar POST -------------->
         <button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
 
-        <!-------------- Boton Editar POST -------------->
+        <!-------------- Boton Editar POST 
         <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
+        -------------->
 
         <!-------------- Boton Like POST -------------->
         <button id="likePost"> Me gusta </button>
@@ -124,12 +122,9 @@ function showHome(user) {
 
         function postDeleted(id) {
           if (confirm('¿Realmente deseas eliminar la publicación?')) {
-            db.collection('users').doc(id).delete()
-              .then(() => {}).catch((error) => {
-                prompt('Error removing document: ', error);
-              });
+            db.collection('users').doc(id).delete().then();
           } else {
-            prompt('Hay un problema con el id del post lo trae null');
+            alert('Post rescatado');
           }
         }
 
@@ -142,11 +137,13 @@ function showHome(user) {
 
         document.getElementById('btnSignOff').addEventListener('click', () => {
           firebase.auth().signOut()
-            .then(() => {document.location.href = '/';})
+            .then(() => {
+              document.location.href = '/';
+            })
             .catch(() => {
               root.innerHTML('error');
             });
-        })
+        });
       });
     });
   }

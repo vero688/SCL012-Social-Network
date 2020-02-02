@@ -16,7 +16,7 @@ function registerMe() {
     <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
     <button id="btnRegisterMe">Registrarme</button>
   `;
-  document.getElementById('btnRegisterMe').addEventListener('click', register)
+  document.getElementById('btnRegisterMe').addEventListener('click', register);
 }
 
 //  Función para registro con Firebase
@@ -24,32 +24,29 @@ function register() {
   const registerEmail = document.getElementById('registerEmail').value;
   const registerPassword = document.getElementById('registerPassword').value;
   firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
-    .then(function() {
-    check()
-    alert('La cuenta se ha creado exitosamente');
-      })
-    .catch(function (error) {
+    .then(() => {
+      check(alert('La cuenta se ha creado exitosamente'))
+    })
+    .catch((error) => {
     // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert('Debe completar todos los campos')
-    // ...
-    console.log(errorCode);
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert('Debe completar todos los campos');
+      // ...
+      console.log(errorCode);
       console.log(errorMessage);
-  });
-};
-//___________________CERRAR SESIÓN___________________
+});
+}
+
+// ___________________CERRAR SESIÓN___________________
 
 function check() {
-    let user = firebase.auth().currentUser;
-  
-    user.sendEmailVerification().then(function () {
-      // Email sent.
-      console.log('enviando correo...');
-    })
-      .catch(function (error) {
-        // An error happened.
-        console.log(error);
-     });
+  const user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(() => {
+    console.log('enviando correo...');
+})
+    .catch((error) => {
+      console.log(error);
+});
 }
 export { registerMe, register, check }
