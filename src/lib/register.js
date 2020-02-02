@@ -1,9 +1,9 @@
-//___________________REGISTRARSE___________________
+// ___________________REGISTRARSE___________________
 // Función que muestra formulario de registro
 function registerMe() {
-    window.location.hash = '/register';
-    const root = document.getElementById('root');
-     root.innerHTML = `<h4>Crear Cuenta</h4>
+  window.location.hash = '/register';
+  const root = document.getElementById('root');
+  root.innerHTML = `<h4>Crear Cuenta</h4>
     <input id="name" placeholder="Nombre y Apellido">
     <input id="date" type="date" placeholder="Fecha de Nacimiento">
     <form>
@@ -15,32 +15,29 @@ function registerMe() {
     <p>Tu contraseña debe tener un mínimo de 6 caracteres númericos</p>
     <input id="registerPassword" type="password" placeholder="Ingresa tu contraseña">
     <button id="btnRegisterMe">Registrarme</button>
-    `
-    document.getElementById('btnRegisterMe').addEventListener('click', register)
-    }
-    
-    
-//   Función para registro con Firebase
-  function register() {
-    const registerEmail = document.getElementById('registerEmail').value;
-    const registerPassword = document.getElementById('registerPassword').value;
-  
-  
-    firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
-      .then(function () {
-        check()
-        alert('La cuenta se ha creado exitosamente');
+  `;
+  document.getElementById('btnRegisterMe').addEventListener('click', register)
+}
+
+//  Función para registro con Firebase
+function register() {
+  const registerEmail = document.getElementById('registerEmail').value;
+  const registerPassword = document.getElementById('registerPassword').value;
+  firebase.auth().createUserWithEmailAndPassword(registerEmail, registerPassword)
+    .then(function() {
+    check()
+    alert('La cuenta se ha creado exitosamente');
       })
-      .catch(function (error) {
-        // Handle Errors here.
-        let errorCode = error.code;
-        let errorMessage = error.message;
-        alert('Debe completar todos los campos')
-        // ...
-        console.log(errorCode);
-        console.log(errorMessage);
-      });
-  };
+    .catch(function (error) {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert('Debe completar todos los campos')
+    // ...
+    console.log(errorCode);
+      console.log(errorMessage);
+  });
+};
 //___________________CERRAR SESIÓN___________________
 
 function check() {
@@ -53,6 +50,6 @@ function check() {
       .catch(function (error) {
         // An error happened.
         console.log(error);
-      });
-  }
-  export{registerMe, register, check}
+     });
+}
+export { registerMe, register, check }

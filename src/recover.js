@@ -1,13 +1,9 @@
 // INICIO RECUPERACION CONTRASEÑA--DIANA
-
-
-
 const recoverBtn = document.getElementById("recoverBtn");
   recoverBtn.addEventListener('click', () => {  
   recoverPass();
 
   })
- 
 
 let recoverPass = function(){ // para invocar a la funcion de firebase
     let auth = firebase.auth();
@@ -21,4 +17,3 @@ let recoverPass = function(){ // para invocar a la funcion de firebase
       console.log(error)
     })
   }
-  

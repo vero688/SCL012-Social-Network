@@ -63,5 +63,3 @@ function observer() {
 
  }
  observer();
-
-
