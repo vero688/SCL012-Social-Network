@@ -168,12 +168,16 @@ function showHome(user) {
 
 
         // <!-------------- Boton Borrar POST -------------->
+<<<<<<< HEAD
+       ` <button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
+=======
         `<button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
+>>>>>>> 5d4b0a9da4a2a8c1fa88aa3ef10a729b0bdfb4fe
 
-        <!-------------- Boton Editar POST 
+      
         <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
-        -------------->
-        <!-------------- Boton Like POST -------------->
+      
+     
         <button id="likePost"> Me gusta </button>
         `;
 

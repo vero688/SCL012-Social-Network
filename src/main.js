@@ -20,9 +20,6 @@ export const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-// Llamada para función que tiene formulario de Login
-
-
 // Llamada para función de recuperar contraseña
 const recoverBtn = document.getElementById('recoverBtn');
 recoverBtn.addEventListener('click', () => {

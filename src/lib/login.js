@@ -7,7 +7,7 @@ function showLogIn() {
   <div class="box-flex">
       <div class="col-login">
           <div class="fila">
-              <img src="../img/logo.png" class="full" alt="">
+              <img src="../img/logode.png" class="full" alt="">
           </div>
           <div class="fila">
               <input id="email" type="email" class="input-blanco" placeholder="ingresa tu Email" required>
