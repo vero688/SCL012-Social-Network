@@ -44,7 +44,6 @@ function showLogIn() {
                         </ul>
                     </div>
                     <div class="fila">
-                        <button id="btngmail">Ingresa con Gmail</button>
                         <button id="registerMe" class="btn-naranjo">REGISTRATE</button>
                     </div>
                 </div>
