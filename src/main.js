@@ -3,6 +3,7 @@
 import * as views from './lib/login.js';
 import * as home from '/lib/home.js';
 import * as register from '/lib/register.js';
+
 views.showLogIn();
 // Your web app's Firebase configuration
 export const firebaseConfig = {
@@ -18,9 +19,6 @@ export const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
-
-// Llamada para función que tiene formulario de Login
-
 
 // Llamada para función de recuperar contraseña
 const recoverBtn = document.getElementById('recoverBtn');

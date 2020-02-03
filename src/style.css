@@ -1,15 +1,12 @@
 
-*{
-    margin: 10px;
-    padding: 10px;
-    box-sizing: border-box;
+/* RESET */
+h1, h2, h3, h4, h5, p{
+    margin: 0 0 10px 0;
+    padding: 0;
 }
 body{
-    background-image: url(img/fondo1.jpg);
-    background-repeat: no-repeat; 
-    background-size: cover;  
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-color: #000;
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     color: white;   
 }
@@ -55,13 +52,18 @@ h4{
    flex-flow: column nowrap;
    max-width: 1000px;
 }
-#email{
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-   flex-flow: column nowrap;
+.box-flex{
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ width: 100%;
+ justify-content: center;
+ align-items: center;
 
+}
+.small-icon{
+    width: 20px ;
+  
 }
 
 .logo{
@@ -78,81 +80,52 @@ h4{
     padding: 70px;
 }
 
-.withch{
+input, button{
     width: 100%;
-    height: auto;
-    margin:none;
-    border:none;
-    display: block;
-    padding: none;
-    display:flex;
-    justify-content: center;
-   
 }
-.social{ display:flex;
-    justify-content: center;
-    flex-direction: column;
-    display: flex;
-   flex-flow: column nowrap;
-   transform: translate(-100%, -10%);
-    
-}
-
-div, .root{
-    justify-content: center;
+.input-blanco{
+    background-color: #fff;
+    border-radius: 50px;
     border: none;
-    flex-flow: column nowrap;
+    padding: 10px 5px;
     box-sizing: border-box;
-    top: 50%;
-    left: 40%;
-    position: absolute;
-    
-
+    min-height: 20px;
+}
+.btn-naranjo{
+    background-color: #ff6600;
+    border-radius: 50px;
+    border: none;
+    padding: 10px 5px;
+    box-sizing: border-box;
+    min-height: 20px; 
+    color: #fff;
+}
+.recordar-pass{
+    color: #fff;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+ul.inicio-icons{
+    display: flex;
+    margin: 0;
+    color: #fff;
+    padding: 0;
+    list-style: none;
+}
+ul.inicio-icons li{
+    margin-right: 10px;
 }
 
-
-@media screen and (max-width:575.98px){
-    .div{height: auto;
-        flex-direction: column;
-        float: left;
-        box-sizing: border-box;
-    }  
-    .button{
-        height: auto;
-        flex-direction: column;
-        float: left;
-        box-sizing: border-box;
+@media (max-width: 475px){
+    .tarjeta{
+        width: 80%;
+    }
+}
+@media (max-width: 320px){
+    .tarjeta{
+        width: 100%;
     }
 }
 
-@media (min-width: 576px) and (max-width: 767.98px){
-    .h4{height: auto;
-        flex-direction: column;
-        float: left;
-        box-sizing: border-box;
-    }  
-}
 
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    .withch{height: auto;
-        flex-direction: column;
-        float: left;
-        box-sizing: border-box;
-    }  
- }
 
- @media (min-width: 992px) and (max-width: 1199.98px) { 
-    body{height: auto;
-        flex-direction: column;
-        float: left;
-        box-sizing: border-box;
-    }  
- }
-
- @media (min-width: 1200px) { 
-    .button{height: auto;
-        flex-direction: column;
-        float: left;
-        box-sizing: border-box;
-    }  
- }
