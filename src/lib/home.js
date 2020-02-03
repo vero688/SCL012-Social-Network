@@ -4,18 +4,14 @@ function showHome(user) {
     window.location.hash = '/home';
     // eslint-disable-next-line no-undef
     root.innerHTML = `
-
       <h1>SP</h1>
       <br>
       <button id="homeMuro"class="btn-naranjo">HOME</button>
       <button id="perfilUsuario" >fotoUsuario</button>
       <br>
-
       <h1>SPARROW PLAYER</h1>
       
       <button id="homeMuro">HOME</button>
-
-
       <!-------------- Buscador -------------->
       <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
   
@@ -29,7 +25,6 @@ function showHome(user) {
       <input type="text" class="searchClass "  Id="postText" rows="10" cols="40" placeholder="Escribe aquí tu comentario">
   
       <!-------------- Boton Publicar POST -------------->
-
       <button id="postbutton"class="btn-naranjo">Publicar</button>
       <div id="postUsuario"></div>
   
@@ -40,24 +35,7 @@ function showHome(user) {
                     <div class="columna">
                        
                     </div>
-                    <div class="columna">
-                        <h2>Susej</h2>
-                        <p>5.0</p>
-                        <p>MASTER</p>
-                    </div>
-                </div>
-                <div class="fila">
-                    <div class="columna">
-                        <h3>Catan</h3>
-                        <p>“La esencia del juego no está en competir, sino en colaborar: los problemas de la competic  ión se pueden resolver de manera no violenta”</p>
-                        <p>
-                            <span><a href="">#tablegame</a></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="fila">
-                    <img src="../img/juego.png" class="fullwidth" alt="">
-                </div>
+                    
                 <div class="fila flex-end">
                     <ul class="social-icons pad-all">
                         <li>
@@ -149,31 +127,27 @@ function showHome(user) {
     db.collection('users').onSnapshot((querySnapshot) => {
       postUsuario.innerHTML = '';
       querySnapshot.forEach((doc) => {
-        //  console.log(`${doc.id} => ${doc.data().Titulo}`);<span id="numero-${doc.id}" class="numeros-megusta">${doc.data().like.length}</span>
+
         postUsuario.innerHTML
 
           += ` 
         <h2 id="tittle">${doc.data().Titulo} </h2> 
-
         <textarea id="text">${doc.data().Texto}</textarea>
-
-        <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
-        <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
+        <button id="postDeleted"${doc.id}> Borrar </button>
+        <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
         <button id="likePost"> Me gusta <i class="fa fa-heart" aria-hidden="true"></i></button>`
-        
         document.getElementById('postDeleted').addEventListener('click', () => {
           postDeleted(doc.id);
         });
-        
-
 
         // <!-------------- Boton Borrar POST -------------->
+
         `<button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
+
+
 
       
         <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
-      
-     
         <button id="likePost"> Me gusta </button>
         `;
 

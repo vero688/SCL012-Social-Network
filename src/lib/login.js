@@ -44,7 +44,10 @@ function showLogIn() {
                         </ul>
                     </div>
                     <div class="fila">
+
                          <button id="registerMe" class="btn-naranjo">REGISTRATE</button>
+
+            
                     </div>
                 </div>
             </div>
