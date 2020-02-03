@@ -1,5 +1,3 @@
-
-
 import * as views from './lib/login.js';
 import * as home from '/lib/home.js';
 import * as register from '/lib/register.js';

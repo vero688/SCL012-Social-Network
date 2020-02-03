@@ -71,6 +71,13 @@ function showHome(user) {
     </section>
       <!-------------- Cerrar Sesión -------------->
       <button id="btnSignOff" class="btn-naranjo">Cerrar Sesión</button>  `
+      `<button id="postbutton">Publicar</button>
+
+      <div id="postUsuario"></div>
+  
+      <!-------------- Cerrar Sesión -------------->
+      <button id="btnSignOff">Cerrar Sesión</button>  
+      `;
       
       document.getElementById('btnSignOff').addEventListener('click', signOff)
       function signOff() {
@@ -85,16 +92,8 @@ function showHome(user) {
           });
       }
 
-     
-    //___________________CREAR POST___________________
+    // ___________________CREAR POST___________________
 
-      `<button id="postbutton">Publicar</button>
-
-      <div id="postUsuario"></div>
-  
-      <!-------------- Cerrar Sesión -------------->
-      <button id="btnSignOff">Cerrar Sesión</button>  
-      `;
     document.getElementById('btnSignOff').addEventListener('click', () => {
       firebase.auth().signOut()
         .then(() => {
@@ -166,19 +165,14 @@ function showHome(user) {
         <button id="postDeleted" onclick="postDeleted('${doc.id}')"> Borrar </button>
         <button id="postEditUs" onclick="postEditUs('${doc.id}','${doc.data().Titulo}','${doc.data().Texto}')"> Editar </button>
         <button id="likePost"> Me gusta <i class="fa fa-heart" aria-hidden="true"></i></button>`
-        
         document.getElementById('postDeleted').addEventListener('click', () => {
           postDeleted(doc.id);
         });
-        
-
 
         // <!-------------- Boton Borrar POST -------------->
-        `<button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
-
-        <!-------------- Boton Editar POST 
+        `<button id="postDeleted" ${doc.id}> Borrar </button>
+        <!-------------- Boton Editar POST -------------->
         <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
-        -------------->
         <!-------------- Boton Like POST -------------->
         <button id="likePost"> Me gusta </button>
         `;
