@@ -1,4 +1,3 @@
- //  Función que crea la pagina de inicio
 function showLogIn() {
   window.location.hash = '/login';
   root.innerHTML = `
@@ -6,7 +5,7 @@ function showLogIn() {
   <div class="box-flex">
       <div class="col-login">
           <div class="fila">
-              <img src="../img/logo.png" class="full" alt="">
+              <img src="../img/logode.png" class="full" alt="">
           </div>
           <div class="fila">
               <input id="email" type="email" class="input-blanco" placeholder="ingresa tu Email" required>
@@ -34,10 +33,10 @@ function showLogIn() {
                                 Iniciar sesión con:
                             </li>
                             <li>
-                                <a href="btngmail" id="btngmail" ><i class="fab fa-google-plus"></i><img src="../img/icon-gmail.png" class="small-icon" ></a>
+                                <a href="" id="btngmail" ><img src="../img/icon-gmail.png" class="small-icon" alt=""></a>
                             </li>
                             <li>
-                                <a href="btnFace" id="btnFace"><i class="fab fa-facebook"></i><img src="../img/icon-fb.png" class="small-icon"></a>
+                                <a href=""><img src="../img/icon-fb.png" class="small-icon" alt=""></a>
                             </li>
                         </ul>
                     </div>
@@ -48,18 +47,6 @@ function showLogIn() {
             </div>
         </section>`
 
-
-    root.innerHTML = ` 
-    <img class="logo" src="img/logo.png">
-    <h4>Ingreso de Usuarios</h4>
-   <form> 
-    <input id="email" type="email" placeholder="ingresa tu Email" required>
-    <input id="password" type="password" placeholder="Ingresa tu contraseña" required>
-    <button id="logIn">Iniciar Sesión</button>
-    <img class="witch" src="img/brujo.png">
-    <button id="registerMe">Registrarme</button>
-  
-    <button id="recoverBtn">¿Olvidaste tu contraseña?</button>`
 
   }
   // función que realiza el incio de sesión en firebase
@@ -93,5 +80,5 @@ let recoverPass = function(){ // para invocar a la funcion de firebase
     })
   }
   
-  
+
   export {showLogIn, logIn, recoverPass}

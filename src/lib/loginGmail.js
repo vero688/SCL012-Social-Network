@@ -1,6 +1,6 @@
-//inicio con google//
-  export const authFire = () => {
-   console.log("FUNCIONA EL BOTON");
+// inicio con google
+export const authFire = () => {
+  console.log('FUNCIONA EL BOTON');
   const provider = new firebase.auth.GoogleAuthProvider();
 
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
