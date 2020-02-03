@@ -3,6 +3,7 @@
 import * as views from './lib/login.js';
 import * as home from '/lib/home.js';
 import * as register from '/lib/register.js';
+
 views.showLogIn();
 // Your web app's Firebase configuration
 export const firebaseConfig = {
@@ -38,7 +39,7 @@ document.getElementById('logIn').addEventListener('click', (prevent) => {
   prevent.preventDefault();
   views.logIn(email, password);
 });
-// Llamada a función
+
 // Función observador
 function observer() {
   firebase.auth().onAuthStateChanged((user) => {
