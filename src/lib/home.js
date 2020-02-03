@@ -141,7 +141,11 @@ function showHome(user) {
         });
 
         // <!-------------- Boton Borrar POST -------------->
-       ` <button id="postDeleted" ${doc.id}> Borrar </button>
+
+        `<button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
+
+
+
       
         <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
         <button id="likePost"> Me gusta </button>
