@@ -36,24 +36,7 @@ function showHome(user) {
                     <div class="columna">
                        
                     </div>
-                    <div class="columna">
-                        <h2>Susej</h2>
-                        <p>5.0</p>
-                        <p>MASTER</p>
-                    </div>
-                </div>
-                <div class="fila">
-                    <div class="columna">
-                        <h3>Catan</h3>
-                        <p>“La esencia del juego no está en competir, sino en colaborar: los problemas de la competic  ión se pueden resolver de manera no violenta”</p>
-                        <p>
-                            <span><a href="">#tablegame</a></span>
-                        </p>
-                    </div>
-                </div>
-                <div class="fila">
-                    <img src="../img/juego.png" class="fullwidth" alt="">
-                </div>
+                    
                 <div class="fila flex-end">
                     <ul class="social-icons pad-all">
                         <li>
@@ -159,10 +142,12 @@ function showHome(user) {
         });
 
         // <!-------------- Boton Borrar POST -------------->
-        `<button id="postDeleted" ${doc.id}> Borrar </button>
-        <!-------------- Boton Editar POST -------------->
+       ` <button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
+
+      
         <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
-        <!-------------- Boton Like POST -------------->
+      
+     
         <button id="likePost"> Me gusta </button>
         `;
 

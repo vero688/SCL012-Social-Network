@@ -7,7 +7,7 @@ function showLogIn() {
   <div class="box-flex">
       <div class="col-login">
           <div class="fila">
-              <img src="../img/logo.png" class="full" alt="">
+              <img src="../img/logode.png" class="full" alt="">
           </div>
           <div class="fila">
               <input id="email" type="email" class="input-blanco" placeholder="ingresa tu Email" required>
@@ -44,7 +44,6 @@ function showLogIn() {
                         </ul>
                     </div>
                     <div class="fila">
-                        <button id="btngmail">Ingresa con Gmail</button>
                         <button id="registerMe" class="btn-naranjo">REGISTRATE</button>
                     </div>
                 </div>
