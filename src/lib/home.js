@@ -1,24 +1,17 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-undef */
-/* eslint-disable no-alert */
 // Función que muestra el muro
 function showHome(user) {
   if (user.emailVerified) {
     window.location.hash = '/home';
     // eslint-disable-next-line no-undef
     root.innerHTML = `
-
       <h1>DP</h1>
       <br>
       <button id="homeMuro"class="btn-naranjo">HOME</button>
       <button id="perfilUsuario" >fotoUsuario</button>
       <br>
-
       <h1>SPARROW PLAYER</h1>
       
       <button id="homeMuro">HOME</button>
-
-
       <!-------------- Buscador -------------->
       <input type="text" id="searchMuro" class="searchClass" placeholder="Buscador de DovePLayer"></input>
   
@@ -32,7 +25,6 @@ function showHome(user) {
       <input type="text" class="searchClass "  Id="postText" rows="10" cols="40" placeholder="Escribe aquí tu comentario">
   
       <!-------------- Boton Publicar POST -------------->
-
       <button id="postbutton"class="btn-naranjo">Publicar</button>
       <div id="postUsuario"></div>
   
@@ -103,8 +95,6 @@ function showHome(user) {
       <!-------------- Cerrar Sesión -------------->
       <button id="btnSignOff">Cerrar Sesión</button>  
       `;
-
-
     document.getElementById('btnSignOff').addEventListener('click', () => {
       firebase.auth().signOut()
         .then(() => {
@@ -114,10 +104,7 @@ function showHome(user) {
           alert('error');
         });
     });
-
-
     // ___________________CREAR POST___________________
-
     const db = firebase.firestore();
     document.getElementById('postbutton').addEventListener('click', () => {
       const postTittle2 = document.getElementById('postTittle').value;
@@ -135,9 +122,7 @@ function showHome(user) {
           // console.error("Error adding document: ", error);
         });
     });
-
     // ___________________Like Post___________________
-
     function likePost(id) {
       const user = firebase.auth().currentUser;
       db.collection('users').doc(id).get().then((resultado) => {
@@ -152,7 +137,6 @@ function showHome(user) {
               post.like.splice(i, 1); // sentencia para eliminar un elemento de un array
               db.collection('users').doc(id).update({ // para actualizar el array
                 like: post.like
-
               
               });
             }
@@ -168,15 +152,12 @@ function showHome(user) {
         .catch(function (error) {
         });
     }
-
     // ___________________IMPRIMIR POST CREADO___________________
-
     db.collection('users').onSnapshot((querySnapshot) => {
       postUsuario.innerHTML = '';
       querySnapshot.forEach((doc) => {
         // console.log(`${doc.id} => ${doc.data().Titulo}`);<span id="numero-${doc.id}" class="numeros-megusta">${doc.data().like.length}</span>
         postUsuario.innerHTML
-
           += ` 
         <h2 id="tittle">${doc.data().Titulo} </h2> 
 
