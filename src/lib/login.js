@@ -1,17 +1,21 @@
  //  Función que crea la pagina de inicio
 function showLogIn() {
   window.location.hash = '/login';
-    root.innerHTML = ` 
-    <img class="logo" src="img/logo.png">
-    <h4>Ingreso de Usuarios</h4>
-   <form> 
-    <input id="email" type="email" placeholder="ingresa tu Email" required>
-    <input id="password" type="password" placeholder="Ingresa tu contraseña" required>
-    <button id="logIn">Iniciar Sesión</button>
-    <img class="witch" src="img/brujo.png">
-    <button id="registerMe">Registrarme</button>
-  
-    <button id="recoverBtn">¿Olvidaste tu contraseña?</button>`
+    contentRecover.innerHTML = ` 
+    <div class="contentImg"><img class="logo" src="img/logo.png"></div>
+    <div id="root">
+      <h4>Ingreso de Usuarios</h4>
+      <input id="email" type="email" placeholder="ingresa tu Email">
+      <input id="password" type="password" placeholder="Ingresa tu contraseña">
+      <button id="logIn">Iniciar Sesión</button>
+      <img clas="witch" src="img/brujo.png">
+      <button id="registerMe">Registrarme</button>
+      <button id="recoverBtn">¿Olvidaste tu contraseña?</button>
+    </div>`
+
+    // <div id="social" class="social">
+    //   <button id="btngmail"><i class="fab fa-google-plus"></i></button>
+    //   <button id="btnFace"><i class="fab fa-facebook"></i></button>
   }
   // función que realiza el incio de sesión en firebase
 function logIn(email, password) {
