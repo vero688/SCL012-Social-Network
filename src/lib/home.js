@@ -93,7 +93,7 @@ function showHome(user) {
      
     //___________________CREAR POST___________________
 
-      <button id="postbutton">Publicar</button>
+      `<button id="postbutton">Publicar</button>
 
       <div id="postUsuario"></div>
   
@@ -189,8 +189,8 @@ function showHome(user) {
         
 
 
-        <!-------------- Boton Borrar POST -------------->
-        <button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
+        // <!-------------- Boton Borrar POST -------------->
+        `<button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
 
         <!-------------- Boton Editar POST 
         <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
