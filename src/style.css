@@ -1,4 +1,4 @@
-
+/* 
 /* RESET */
 h1, h2, h3, h4, h5, p{
     margin: 0 0 10px 0;
@@ -25,9 +25,9 @@ body{
 .small-icon{
     width: 20px ;
   
-}
+} 
 
-/* INICIO */
+/* login */
 .col-login{
     display: flex;
     flex-direction: column;
@@ -82,6 +82,6 @@ ul.inicio-icons li{
         width: 100%;
     }
 }
+ */
 
-
-
+ 

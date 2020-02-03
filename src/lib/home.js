@@ -4,7 +4,8 @@ function showHome(user) {
     window.location.hash = '/home';
     // eslint-disable-next-line no-undef
     root.innerHTML = `
-      <h1>DP</h1>
+
+      <h1>SP</h1>
       <br>
       <button id="homeMuro"class="btn-naranjo">HOME</button>
       <button id="perfilUsuario" >fotoUsuario</button>
@@ -71,17 +72,16 @@ function showHome(user) {
     </section>
       <!-------------- Cerrar Sesión -------------->
       <button id="btnSignOff" class="btn-naranjo">Cerrar Sesión</button>  `
-      `<button id="postbutton">Publicar</button>
+    `<button id="postbutton">Publicar</button>
 
       <div id="postUsuario"></div>
   
       <!-------------- Cerrar Sesión -------------->
       <button id="btnSignOff">Cerrar Sesión</button>  
       `;
-      
+
       document.getElementById('btnSignOff').addEventListener('click', signOff)
       function signOff() {
-  
         firebase.auth().signOut()
           .then(function () {
             document.location.href = "/";
@@ -92,17 +92,6 @@ function showHome(user) {
           });
       }
 
-    // ___________________CREAR POST___________________
-
-    document.getElementById('btnSignOff').addEventListener('click', () => {
-      firebase.auth().signOut()
-        .then(() => {
-          document.location.href = '/';
-        })
-        .catch(() => {
-          alert('error');
-        });
-    });
     // ___________________CREAR POST___________________
     const db = firebase.firestore();
     document.getElementById('postbutton').addEventListener('click', () => {
@@ -155,7 +144,7 @@ function showHome(user) {
     db.collection('users').onSnapshot((querySnapshot) => {
       postUsuario.innerHTML = '';
       querySnapshot.forEach((doc) => {
-        // console.log(`${doc.id} => ${doc.data().Titulo}`);<span id="numero-${doc.id}" class="numeros-megusta">${doc.data().like.length}</span>
+        //  console.log(`${doc.id} => ${doc.data().Titulo}`);<span id="numero-${doc.id}" class="numeros-megusta">${doc.data().like.length}</span>
         postUsuario.innerHTML
           += ` 
         <h2 id="tittle">${doc.data().Titulo} </h2> 
@@ -195,18 +184,6 @@ function showHome(user) {
         const postPt = postDeleted;
         document.getElementById('postDeleted').addEventListener('click', () => {
           postPt(doc.id);
-        });
-
-        // ___________________Cerrar Sesión___________________
-
-        document.getElementById('btnSignOff').addEventListener('click', () => {
-          firebase.auth().signOut()
-            .then(() => {
-              document.location.href = '/';
-            })
-            .catch(() => {
-              root.innerHTML('error');
-            });
         });
       });
     });
