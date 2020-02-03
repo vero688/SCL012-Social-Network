@@ -1,21 +1,66 @@
  //  Función que crea la pagina de inicio
 function showLogIn() {
   window.location.hash = '/login';
-    contentRecover.innerHTML = ` 
-    <div class="contentImg"><img class="logo" src="img/logo.png"></div>
-    <div id="root">
-      <h4>Ingreso de Usuarios</h4>
-      <input id="email" type="email" placeholder="ingresa tu Email">
-      <input id="password" type="password" placeholder="Ingresa tu contraseña">
-      <button id="logIn">Iniciar Sesión</button>
-      <img clas="witch" src="img/brujo.png">
-      <button id="registerMe">Registrarme</button>
-      <button id="recoverBtn">¿Olvidaste tu contraseña?</button>
-    </div>`
+  root.innerHTML = `
+  <section>
+  <div class="box-flex">
+      <div class="col-login">
+          <div class="fila">
+              <img src="../img/logo.png" class="full" alt="">
+          </div>
+          <div class="fila">
+              <input id="email" type="email" class="input-blanco" placeholder="ingresa tu Email" required>
+          </div>
+          <div class="fila">
+              <input id="password" type="password" class="input-blanco" placeholder="Ingresa tu contraseña" required>
+          </div>
+          <div class="fila">
+              <button id="logIn" class="btn-naranjo">INICIAR SESIÓN</button>
+          </div>
+          <div>
+              <p class="center-text">
+                  <a href="" id="recoverBtn" class="recordar-pass">¿Olvidaste tu contraseña?</a>
+              </p>
+          </div>
+          </div>
+                    <div class="fila">
+                        <img src="../img/brujo.png" alt="" class="fullwidth">
+                    </div>
+                    
+                    
+                    <div class="fila">
+                        <ul class="inicio-icons">
+                            <li>
+                                Iniciar sesión con:
+                            </li>
+                            <li>
+                                <a href="" id="btngmail" ><i class="fab fa-google-plus"></i><img src="../img/icon-gmail.png" class="small-icon" alt=""></a>
+                            </li>
+                            <li>
+                                <a href=""><img src="../img/icon-fb.png" class="small-icon" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fila">
+                        <button id="registerMe" class="btn-naranjo">REGISTRATE</button>
+                    </div>
+                </div>
+            </div>
+        </section>`
 
-    // <div id="social" class="social">
-    //   <button id="btngmail"><i class="fab fa-google-plus"></i></button>
-    //   <button id="btnFace"><i class="fab fa-facebook"></i></button>
+
+    root.innerHTML = ` 
+    <img class="logo" src="img/logo.png">
+    <h4>Ingreso de Usuarios</h4>
+   <form> 
+    <input id="email" type="email" placeholder="ingresa tu Email" required>
+    <input id="password" type="password" placeholder="Ingresa tu contraseña" required>
+    <button id="logIn">Iniciar Sesión</button>
+    <img class="witch" src="img/brujo.png">
+    <button id="registerMe">Registrarme</button>
+  
+    <button id="recoverBtn">¿Olvidaste tu contraseña?</button>`
+
   }
   // función que realiza el incio de sesión en firebase
 function logIn(email, password) {
