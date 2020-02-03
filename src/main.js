@@ -36,7 +36,7 @@ document.getElementById('logIn').addEventListener('click', (prevent) => {
   prevent.preventDefault();
   views.logIn(email, password);
 });
-// Llamada a función
+
 // Función observador
 function observer() {
   firebase.auth().onAuthStateChanged((user) => {

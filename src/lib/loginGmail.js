@@ -1,5 +1,5 @@
 // inicio con google
-export const authFire = () => {
+ const authFire = () => {
   console.log('FUNCIONA EL BOTON');
   const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -18,14 +18,12 @@ export const authFire = () => {
   });
 }
 
-document.getElementById('btngmail').addEventListener('click', () => {
-  console.log('click');
-  authFire();
-});
+
+  
 
 // inicio con Facebook
 
-export const authFacebook = () => {
+ const authFacebook = () => {
   console.log('FUNCIONA EL BOTON');
   const provider = new firebase.auth.FacebookAuthProvider();
 
@@ -40,6 +38,6 @@ export const authFacebook = () => {
   });
 };
 
-document.getElementById('btnFace').addEventListener('click', () => {
-  authFacebook();
-});
+  
+
+export{authFire, authFacebook}
