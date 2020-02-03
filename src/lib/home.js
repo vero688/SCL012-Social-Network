@@ -134,18 +134,10 @@ function showHome(user) {
         <h2 id="tittle">${doc.data().Titulo} </h2> 
         <textarea id="text">${doc.data().Texto}</textarea>
         <button id="postDeleted"${doc.id}> Borrar </button>
-        <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
         <button id="likePost"> Me gusta <i class="fa fa-heart" aria-hidden="true"></i></button>`
         document.getElementById('postDeleted').addEventListener('click', () => {
           postDeleted(doc.id);
         });
-
-        // <!-------------- Boton Borrar POST -------------->
-       ` <button id="postDeleted" ${doc.id}> Borrar </button>
-      
-        <button id="postEditUs" ${doc.id},${doc.data().Titulo},${doc.data().Texto}> Editar </button>
-        <button id="likePost"> Me gusta </button>
-        `;
 
 
         document.getElementById('likePost').addEventListener('click', () => {
