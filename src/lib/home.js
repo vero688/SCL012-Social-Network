@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
+/* eslint-disable no-alert */
 // Función que muestra el muro
 function showHome(user) {
   if (user.emailVerified) {
