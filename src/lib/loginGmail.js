@@ -1,5 +1,5 @@
 // inicio con google
- const authFire = () => {
+const authFire = () => {
   console.log('FUNCIONA EL BOTON');
   const provider = new firebase.auth.GoogleAuthProvider();
 
