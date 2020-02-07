@@ -139,8 +139,6 @@ function showHome(user) {
           postDeleted(doc.id);
         });
 
-<<<<<<< HEAD
-=======
         // <!-------------- Boton Borrar POST -------------->
 
         `<button id="postDeleted" ${doc.id}, ${doc.users}> Borrar </button>
@@ -152,7 +150,6 @@ function showHome(user) {
         <button id="likePost"> Me gusta </button>
         `;
 
->>>>>>> f3a201dd5dca7b59b50eb6a2df0e996922b4d04f
 
         document.getElementById('likePost').addEventListener('click', () => {
           likePost(doc.id);
