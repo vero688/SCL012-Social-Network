@@ -5,14 +5,14 @@ import * as register from '/lib/register.js';
 views.showLogIn();
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-  apiKey: 'AIzaSyCJK1y95OD8KAEsm8rzYjeZLcwyJ6Hfa5A',
-  authDomain: 'social-network-7c958.firebaseapp.com',
-  databaseURL: 'https://social-network-7c958.firebaseio.com',
-  projectId: 'social-network-7c958',
-  storageBucket: 'social-network-7c958.appspot.com',
-  messagingSenderId: '533235702935',
-  appId: '1:533235702935:web:5b58d0628a18cc8c51ddd2',
-  measurementId: 'G-N8NJGBC7MR'
+  apiKey: "AIzaSyBZF84S9Tn7VgJgLJmn92t8uj-MqzNIqGI",
+    authDomain: "social-network-3c789.firebaseapp.com",
+    databaseURL: "https://social-network-3c789.firebaseio.com",
+    projectId: "social-network-3c789",
+    storageBucket: "social-network-3c789.appspot.com",
+    messagingSenderId: "742708776120",
+    appId: "1:742708776120:web:371134ec16af70a32a384d",
+    measurementId: "G-P3NYGRX0KZ"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

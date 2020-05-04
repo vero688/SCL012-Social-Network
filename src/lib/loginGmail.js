@@ -5,8 +5,9 @@ const authFire = () => {
 
   provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
 
-  firebase.auth().signInWithPopup(provider).then((result) => {
-    let token = result.credencial.accessToken;
+  firebase.auth().signInWithPopup(provider)
+    .then((result) => {
+      let token = result.credencial.accessToken;
     let user = resul.user;
     console.log(user)
   }).catch((error) => {
